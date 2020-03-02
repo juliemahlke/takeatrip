@@ -9,7 +9,7 @@ export default function TripListItem({ title, date }) {
         <img src={defaultImg} width="200" alt=""></img>
         <div className="wrapper">
           <h2>{title}</h2>
-          {date}
+          <span>{date}</span>
         </div>
       </TripListItemStyled>
     </>
@@ -26,11 +26,14 @@ const TripListItemStyled = styled.section`
   font-weight: 300;
   line-height: 1.29;
   color: #747474;
+  height: 100px;
+  overflow: hidden;
 
   .wrapper {
     padding: 10px;
     display: grid;
     gap: 10px;
+    width: 70%;
   }
 
   h2 {
@@ -40,6 +43,12 @@ const TripListItemStyled = styled.section`
     letter-spacing: normal;
     margin: 0;
     color: #505050;
+    max-height: 45px;
+    overflow: hidden;
+  }
+
+  span {
+    max-height: 30px;
   }
 
   img {
