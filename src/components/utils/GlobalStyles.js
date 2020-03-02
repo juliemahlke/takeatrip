@@ -11,6 +11,13 @@ export default createGlobalStyle`
     background: #F5F5F5;
     color: #333;
     padding: 25px;
+    display:flex;
+    justify-content: center; 
+  }
+
+  .App {
+    max-width: 768px;
+    
   }
 
   h1 {

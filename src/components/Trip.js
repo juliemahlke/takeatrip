@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import defaultImg from './images/default-image.jpg'
 
 export default function Trip({ title, date }) {
@@ -9,7 +9,7 @@ export default function Trip({ title, date }) {
         <img src={defaultImg} width="200" alt=""></img>
         <div className="wrapper">
           <h2>{title}</h2>
-          <span className="date">{date}</span>
+          {date}
         </div>
       </TripStyled>
     </>
@@ -17,12 +17,15 @@ export default function Trip({ title, date }) {
 }
 
 const TripStyled = styled.section`
-  max-height: 115px;
   border-radius: 10px;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
   display: flex;
   margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.29;
+  color: #747474;
 
   .wrapper {
     padding: 10px;
@@ -38,23 +41,10 @@ const TripStyled = styled.section`
     margin: 0;
     color: #505050;
   }
+
   img {
     object-fit: cover;
     border-radius: 10px 0 0 10px;
     width: 30%;
-  }
-
-  .country {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.29;
-    color: #747474;
-  }
-
-  .date {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.29;
-    color: #747474;
   }
 `
