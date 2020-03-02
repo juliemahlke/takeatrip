@@ -5,9 +5,10 @@ import * as serviceWorker from './serviceWorker'
 import GlobalStyles from './components/utils/GlobalStyles'
 
 ReactDOM.render(
-  <GlobalStyles>
+  <>
+    <GlobalStyles />
     <App />
-  </GlobalStyles>,
+  </>,
   document.getElementById('root')
 )
 
