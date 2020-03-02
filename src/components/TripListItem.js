@@ -1,22 +1,22 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import defaultImg from './images/default-image.jpg'
+import defaultImg from '../images/default-image.jpg'
 
-export default function Trip({ title, date }) {
+export default function TripListItem({ title, date }) {
   return (
     <>
-      <TripStyled>
+      <TripListItemStyled>
         <img src={defaultImg} width="200" alt=""></img>
         <div className="wrapper">
           <h2>{title}</h2>
           {date}
         </div>
-      </TripStyled>
+      </TripListItemStyled>
     </>
   )
 }
 
-const TripStyled = styled.section`
+const TripListItemStyled = styled.section`
   border-radius: 10px;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
@@ -34,7 +34,7 @@ const TripStyled = styled.section`
   }
 
   h2 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     line-height: 1.25;
     letter-spacing: normal;

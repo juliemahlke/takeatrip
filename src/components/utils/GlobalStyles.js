@@ -17,7 +17,6 @@ export default createGlobalStyle`
 
   .App {
     max-width: 768px;
-    
   }
 
   h1 {
