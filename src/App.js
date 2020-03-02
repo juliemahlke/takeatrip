@@ -1,15 +1,29 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import Trip from './components/Trip'
-import GlobalStyles from './components/utils/GlobalStyles'
 
 function App() {
+  const trips = [
+    {
+      title: 'Barcelona',
+      date: '12.05. - 20.05.20',
+    },
+    {
+      title: 'Berlin',
+      date: '12.10. - 14.10.20',
+    },
+    {
+      title: 'Basel',
+      date: '12.05. - 20.05.20',
+    },
+  ]
+
   return (
     <div className="App">
       <h1>My Trips</h1>
 
-      <Trip />
+      {trips.map(trip => (
+        <Trip title={trip.title} date={trip.date} />
+      ))}
     </div>
   )
 }

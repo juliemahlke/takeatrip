@@ -2,15 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import defaultImg from './images/default-image.jpg'
 
-export default function Trip() {
+export default function Trip({ title, date }) {
   return (
     <>
       <TripStyled>
-        <img src={defaultImg} width="200"></img>
+        <img src={defaultImg} width="200" alt=""></img>
         <div className="wrapper">
-          <h2>Barcelona</h2>
-          <span className="country">Spanien</span>
-          <span className="date">12.05. - 20.05.20</span>
+          <h2>{title}</h2>
+          <span className="date">{date}</span>
         </div>
       </TripStyled>
     </>
