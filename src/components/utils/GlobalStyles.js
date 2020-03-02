@@ -7,11 +7,13 @@ export default createGlobalStyle`
 
   body {
     font-family: 'IBM Plex Sans';
+    font-style: normal;
     background: #F5F5F5;
+    color: #333;
+    padding: 25px;
   }
 
   h1 {
-    color: green;
     font-family: 'Fredoka One';
   }
 `
