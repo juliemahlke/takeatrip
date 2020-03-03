@@ -1,13 +1,12 @@
 import React from 'react'
 import TripListItem from './TripListItem'
-import TripsData from '../data/tripsdata.json'
 
-export default function TripList() {
+export default function TripList({ trips }) {
+  console.log(trips)
   return (
     <>
       <h1>My Trips</h1>
-
-      {TripsData.map(trip => (
+      {trips.map(trip => (
         <TripListItem title={trip.title} date={trip.date} />
       ))}
     </>
