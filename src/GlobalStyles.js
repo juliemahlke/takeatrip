@@ -13,9 +13,6 @@ export default createGlobalStyle`
     padding: 25px;
     display:flex;
     justify-content: center; 
-  }
-
-  .App {
     max-width: 768px;
   }
 
