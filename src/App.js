@@ -1,15 +1,17 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import TripList from './components/TripList'
+import styled from 'styled-components'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-      take a ...
-      <FontAwesomeIcon icon={faCoffee} />
-    </div>
+    <AppStyled>
+      <TripList />
+    </AppStyled>
   )
 }
 
 export default App
+
+const AppStyled = styled.div`
+  max-width: 768px;
+`
