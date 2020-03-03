@@ -1,15 +1,13 @@
 import React from 'react'
 import TripListItem from './TripListItem'
-import * as Trips from '../data/trips.json'
+import TripsData from '../data/tripsdata.json'
 
 export default function TripList() {
-  const tripData = Trips.trips
-
   return (
     <>
       <h1>My Trips</h1>
 
-      {tripData.map(trip => (
+      {TripsData.map(trip => (
         <TripListItem title={trip.title} date={trip.date} />
       ))}
     </>
