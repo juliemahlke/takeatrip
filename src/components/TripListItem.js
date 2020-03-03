@@ -7,10 +7,10 @@ export default function TripListItem({ title, date }) {
     <>
       <TripListItemStyled>
         <img src={defaultImg} width="200" alt=""></img>
-        <div className="wrapper">
+        <WrapperStyled>
           <h2>{title}</h2>
           <span>{date}</span>
-        </div>
+        </WrapperStyled>
       </TripListItemStyled>
     </>
   )
@@ -28,13 +28,6 @@ const TripListItemStyled = styled.section`
   color: #747474;
   height: 100px;
   overflow: hidden;
-
-  .wrapper {
-    padding: 10px;
-    display: grid;
-    gap: 10px;
-    width: 70%;
-  }
 
   h2 {
     font-size: 18px;
@@ -56,4 +49,11 @@ const TripListItemStyled = styled.section`
     border-radius: 10px 0 0 10px;
     width: 30%;
   }
+`
+
+const WrapperStyled = styled.div`
+  padding: 10px;
+  display: grid;
+  gap: 10px;
+  width: 70%;
 `
