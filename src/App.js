@@ -6,7 +6,7 @@ import TripsData from './data/tripsdata.json'
 
 function App() {
   const [trips, setTrips] = useState(TripsData)
-
+  console.log(trips)
   return (
     <AppStyled>
       <CreateTrip addTripData={createTrip()} />
