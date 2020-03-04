@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import TripList from './components/TripList'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import CreateTrip from './components/CreateTrip'
 import TripsData from './data/tripsdata.json'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
