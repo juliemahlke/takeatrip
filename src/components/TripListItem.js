@@ -2,14 +2,14 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import defaultImg from '../images/default-image.jpg'
 
-export default function TripListItem({ title, date }) {
+export default function TripListItem({ trip }) {
   return (
     <>
       <TripListItemStyled>
         <img src={defaultImg} width="200" alt=""></img>
         <WrapperStyled>
-          <h2>{title}</h2>
-          <span>{date}</span>
+          <h2>{trip.title}</h2>
+          <span>{trip.date}</span>
         </WrapperStyled>
       </TripListItemStyled>
     </>

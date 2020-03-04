@@ -6,11 +6,7 @@ export default function TripList({ trips }) {
     <>
       <h1>My Trips</h1>
       {trips.map(trip => (
-        <TripListItem
-          title={trip.title}
-          date={trip.date}
-          key={Math.random(trip)}
-        />
+        <TripListItem trip={trip} key={Math.random(trip)} />
       ))}
     </>
   )
