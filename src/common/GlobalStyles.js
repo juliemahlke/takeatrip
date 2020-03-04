@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import styled from 'styled-components'
 
 export default createGlobalStyle`
   * {
@@ -26,6 +25,7 @@ export default createGlobalStyle`
     letter-spacing: 0.56px;
     text-align: center;
     color: #505050;
+    margin-bottom:40px;
   }
 
   strong {
@@ -41,5 +41,9 @@ export default createGlobalStyle`
     text-align: center;
     background-color: #f85a8e;
     color: #ffffff;
+    border:0;
+    padding: 10px 30px;
+    display: inline-block;
+    margin: 30px; 
   }
 `
