@@ -37,7 +37,7 @@ export default createGlobalStyle`
     font-family: 'Fredoka One';
     font-size: 20px;
     line-height: 1.2;
-    letter-spacing: 0.4px;
+    letter-spacing: 1.2px;
     text-align: center;
     background-color: #f85a8e;
     color: #ffffff;
