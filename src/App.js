@@ -3,15 +3,24 @@ import TripList from './components/TripList'
 import styled from 'styled-components'
 import CreateTrip from './components/CreateTrip'
 import TripsData from './data/tripsdata.json'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function App() {
   const [trips, setTrips] = useState(TripsData)
   console.log(trips)
   return (
-    <AppStyled>
-      <CreateTrip addTripData={createTrip()} />
-      <TripList trips={trips} />
-    </AppStyled>
+    <Router>
+      <AppStyled>
+        <Switch>
+          <Route exact path="/">
+            <TripList trips={trips} />
+          </Route>
+          <Route path="/create">
+            <CreateTrip addTripData={createTrip()} />
+          </Route>
+        </Switch>
+      </AppStyled>
+    </Router>
   )
 
   function createTrip() {
