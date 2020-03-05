@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 
 export default function CreateTrip({ addTripData }) {
   const [trip, setTrip] = useState({})
 
   return (
     <FormStyled onSubmit={handleSubmit}>
+      <Link to="/">abbrechen</Link>
       <h1>Erstelle einen neuen Trip!</h1>
       <label>
         <WrapperStyled>
@@ -82,6 +84,6 @@ const FormStyled = styled.form`
   }
 `
 
-const WrapperStyled = styled.form`
+const WrapperStyled = styled.div`
   margin-bottom: 10px;
 `

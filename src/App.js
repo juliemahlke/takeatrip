@@ -3,7 +3,7 @@ import TripList from './components/TripList'
 import styled from 'styled-components/macro'
 import CreateTrip from './components/CreateTrip'
 import TripsData from './data/tripsdata.json'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 
 function App() {
