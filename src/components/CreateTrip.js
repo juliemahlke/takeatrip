@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
-
+import Button from './Button'
 export default function CreateTrip({ addTripData }) {
   const [trip, setTrip] = useState({})
 
   return (
     <FormStyled onSubmit={handleSubmit}>
-      <Link to="/">abbrechen</Link>
+      <Link to="/">x</Link>
       <h1>Erstelle einen neuen Trip!</h1>
       <label>
         <WrapperStyled>
@@ -33,7 +33,7 @@ export default function CreateTrip({ addTripData }) {
           onChange={handleChange}
         ></input>
       </label>
-      <button>Trip speichern</button>
+      <Button buttonText="Trip speichern" />
     </FormStyled>
   )
 
