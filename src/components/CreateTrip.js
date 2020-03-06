@@ -6,8 +6,8 @@ import InputText from './InputText'
 import { useHistory } from 'react-router-dom'
 
 export default function CreateTrip({ addTripData }) {
-  const setTrip = useState({})
-  let history = useHistory()
+  const [disable, setDisable] = useState(true)
+  const history = useHistory()
 
   return (
     <FormStyled onSubmit={handleSubmit}>
@@ -20,6 +20,7 @@ export default function CreateTrip({ addTripData }) {
         name="title"
         placeholder="Titel des Trips"
         onChange={handleChange}
+        required={true}
       ></InputText>
 
       <label>
@@ -29,9 +30,10 @@ export default function CreateTrip({ addTripData }) {
         name="date"
         placeholder="Reisezeitraum"
         onChange={handleChange}
+        required={false}
       ></InputText>
 
-      <Button content="Trip speichern" />
+      <Button content="Trip speichern" disable={disable} />
     </FormStyled>
   )
 
@@ -45,7 +47,7 @@ export default function CreateTrip({ addTripData }) {
   }
 
   function handleChange(event) {
-    setTrip(event.target.value)
+    event.target.value === '' ? setDisable(true) : setDisable(false)
   }
 }
 

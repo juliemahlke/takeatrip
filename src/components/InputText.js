@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function InputText({ name, placeholder }) {
+export default function InputText({ name, placeholder, onChange, required }) {
   return (
     <InputStyled
       type="text"
       name={name}
       placeholder={placeholder}
+      onChange={onChange}
+      required={required}
     ></InputStyled>
   )
 }

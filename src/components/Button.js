@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Button({ content, disabled }) {
-  return <ButtonPrimary>{content}</ButtonPrimary>
+export default function Button({ content, disable }) {
+  return <ButtonPrimary disabled={disable}>{content}</ButtonPrimary>
 }
 
 const ButtonPrimary = styled.button`
@@ -18,4 +18,9 @@ const ButtonPrimary = styled.button`
   padding: 10px 30px;
   display: inline-block;
   margin: 30px;
+
+  &:disabled {
+    background: grey;
+    color: lightgrey;
+  }
 `
