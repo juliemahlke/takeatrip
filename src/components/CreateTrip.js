@@ -1,39 +1,36 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Button from './Button'
+import ButtonCancel from './ButtonCancel'
+import InputText from './InputText'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
 export default function CreateTrip({ addTripData }) {
-  const [trip, setTrip] = useState({})
+  const setTrip = useState({})
 
   return (
     <FormStyled onSubmit={handleSubmit}>
-      <Link to="/">x</Link>
+      <ButtonCancel />
       <h1>Erstelle einen neuen Trip!</h1>
       <label>
-        <WrapperStyled>
-          <strong>Wohin</strong> möchtest Du reisen?
-        </WrapperStyled>
-        <input
-          type="text"
-          name="title"
-          placeholder="Titel des Trips"
-          onChange={handleChange}
-          value={trip.title}
-        ></input>
+        <strong>Wohin</strong> möchtest Du reisen?
       </label>
+      <InputText
+        name="title"
+        placeholder="Titel des Trips"
+        onChange={handleChange}
+      ></InputText>
 
       <label>
-        <WrapperStyled>
-          <strong>Wann</strong> möchtest du verreisen?
-        </WrapperStyled>
-        <input
-          type="text"
-          name="date"
-          placeholder="Reisezeitraum"
-          onChange={handleChange}
-        ></input>
+        <strong>Wann</strong> möchtest du verreisen?
       </label>
-      <Button buttonText="Trip speichern" />
+      <InputText
+        name="date"
+        placeholder="Reisezeitraum"
+        onChange={handleChange}
+      ></InputText>
+
+      <Button content="Trip speichern" disabled="disabled" to="/" />
     </FormStyled>
   )
 
@@ -49,7 +46,6 @@ export default function CreateTrip({ addTripData }) {
 
   function handleChange(event) {
     setTrip(event.target.value)
-    console.log(event.target.value)
   }
 }
 
@@ -61,14 +57,13 @@ const FormStyled = styled.form`
   text-align: center;
 
   label {
-    display: grid;
-    gap: 8px;
     font-size: 18px;
     line-height: 1.28;
     letter-spacing: 0.36px;
     text-align: center;
     color: #505050;
-    margin-bottom: 40px;
+    display: block;
+    margin-bottom: 15px;
   }
 
   input {
@@ -82,8 +77,4 @@ const FormStyled = styled.form`
     text-align: left;
     color: #a5a5a5;
   }
-`
-
-const WrapperStyled = styled.div`
-  margin-bottom: 10px;
 `
