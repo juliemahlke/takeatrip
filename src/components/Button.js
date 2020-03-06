@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Button({ buttonText }) {
-  return <ButtonPrimary>{buttonText}</ButtonPrimary>
+export default function Button({ content, disabled }) {
+  return <ButtonPrimary disabled={disabled}>{content}</ButtonPrimary>
 }
 
 const ButtonPrimary = styled.button`
