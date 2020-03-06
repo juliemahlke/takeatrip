@@ -3,10 +3,11 @@ import styled from 'styled-components/macro'
 import Button from './Button'
 import ButtonCancel from './ButtonCancel'
 import InputText from './InputText'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 export default function CreateTrip({ addTripData }) {
   const setTrip = useState({})
+  let history = useHistory()
 
   return (
     <FormStyled onSubmit={handleSubmit}>
@@ -30,7 +31,7 @@ export default function CreateTrip({ addTripData }) {
         onChange={handleChange}
       ></InputText>
 
-      <Button content="Trip speichern" disabled="disabled" to="/" />
+      <Button content="Trip speichern" />
     </FormStyled>
   )
 
@@ -40,8 +41,7 @@ export default function CreateTrip({ addTripData }) {
     const date = form.date
     event.preventDefault()
     addTripData({ title: title.value, date: date.value })
-    form.reset()
-    form[0].focus()
+    history.push('/')
   }
 
   function handleChange(event) {
