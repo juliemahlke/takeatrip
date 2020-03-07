@@ -1,5 +1,10 @@
 import React from 'react'
 import TripListItem from './TripListItem'
+import PropTypes from 'prop-types'
+
+TripList.propTypes = {
+  trips: PropTypes.array,
+}
 
 export default function TripList({ trips }) {
   return (

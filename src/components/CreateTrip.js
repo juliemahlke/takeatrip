@@ -4,6 +4,11 @@ import Button from './Button'
 import ButtonCancel from './ButtonCancel'
 import InputText from './InputText'
 import { useHistory } from 'react-router-dom'
+import PropTypes from 'prop-types'
+
+Button.propTypes = {
+  addTripData: PropTypes.func,
+}
 
 export default function CreateTrip({ addTripData }) {
   const [disable, setDisable] = useState(true)
@@ -20,7 +25,7 @@ export default function CreateTrip({ addTripData }) {
         name="title"
         placeholder="Titel des Trips"
         onChange={handleChange}
-        required={true}
+        isRequired={true}
       ></InputText>
 
       <label>

@@ -1,14 +1,22 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 
-export default function InputText({ name, placeholder, onChange, required }) {
+InputText.propTypes = {
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func,
+  required: PropTypes.bool,
+}
+
+export default function InputText({ name, placeholder, onChange, isRequired }) {
   return (
     <InputStyled
       type="text"
       name={name}
       placeholder={placeholder}
       onChange={onChange}
-      required={required}
+      required={isRequired}
     ></InputStyled>
   )
 }

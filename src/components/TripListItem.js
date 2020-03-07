@@ -1,6 +1,11 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import defaultImg from '../images/default-image.jpg'
+import PropTypes from 'prop-types'
+
+TripListItem.propTypes = {
+  trip: PropTypes.object,
+}
 
 export default function TripListItem({ trip }) {
   return (
