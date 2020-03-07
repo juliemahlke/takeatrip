@@ -57,6 +57,7 @@ const FormStyled = styled.form`
   background-color: #ffffff;
   padding: 40px;
   text-align: center;
+  display: grid;
 
   label {
     font-size: 18px;
@@ -66,17 +67,5 @@ const FormStyled = styled.form`
     color: #505050;
     display: block;
     margin-bottom: 15px;
-  }
-
-  input {
-    border-radius: 8px;
-    border: solid 2px #cecece;
-    background-color: #ffffff;
-    padding: 10px;
-    font-size: 18px;
-    line-height: 1.28;
-    letter-spacing: 0.36px;
-    text-align: left;
-    color: #a5a5a5;
   }
 `

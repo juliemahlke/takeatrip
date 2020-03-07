@@ -22,6 +22,10 @@ const InputStyled = styled.input`
   line-height: 1.28;
   letter-spacing: 0.36px;
   text-align: left;
-  color: #a5a5a5;
+  background-color: ${props => props.backgroundColor};
   margin-bottom: 30px;
+
+  ::placeholder {
+    color: #a5a5a5;
+  }
 `
