@@ -12,11 +12,21 @@ export default createGlobalStyle`
     color: #333;
     padding: 25px;
     display:flex;
-    justify-content: center; 
-    max-width: 768px;
+    justify-content: center;
   }
 
   h1 {
     font-family: 'Fredoka One';
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 1.14;
+    letter-spacing: 0.56px;
+    text-align: center;
+    color: #505050;
+    margin-bottom:40px;
+  }
+
+  strong {
+    font-weight:700;
   }
 `

@@ -1,14 +1,17 @@
 import React from 'react'
 import TripListItem from './TripListItem'
-import TripsData from '../data/tripsdata.json'
+import PropTypes from 'prop-types'
 
-export default function TripList() {
+TripList.propTypes = {
+  trips: PropTypes.array,
+}
+
+export default function TripList({ trips }) {
   return (
     <>
       <h1>My Trips</h1>
-
-      {TripsData.map(trip => (
-        <TripListItem title={trip.title} date={trip.date} />
+      {trips.map(trip => (
+        <TripListItem trip={trip} key={Math.random(trip)} />
       ))}
     </>
   )
