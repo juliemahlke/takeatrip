@@ -1,22 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
 
 export default function ButtonAdd() {
-  const [toggle, setToggle] = useState(true)
-
-  useEffect(() => {}, [toggle])
-
   return (
-    <ButtonStyled onClick={() => setToggle(!toggle)} to="/create">
+    <ButtonStyled>
       <FontAwesomeIcon icon={['fas', 'plus']} />
     </ButtonStyled>
   )
 }
 
-const ButtonStyled = styled(NavLink)`
+const ButtonStyled = styled.button`
   position: absolute;
   top: 20px;
   right: 20px;
@@ -33,4 +27,5 @@ const ButtonStyled = styled(NavLink)`
   border: 0;
   padding: 10px;
   text-decoration: none;
+  cursor: pointer;
 `
