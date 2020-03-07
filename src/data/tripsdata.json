@@ -1,24 +1,15 @@
 [
+  { "title": "Barcelona", "date": "12.05. - 20.05.20" },
+  { "title": "Berlin Messe ITB", "date": "07.03. - 10.03.20" },
+  { "title": "Roadtrip New York - Miami", "date": "19.07. - 06.08.20" },
   {
-    "title": "Barcelona",
+    "title": "Mallorca mit Vivien, Saskia & Sarah",
     "date": "12.05. - 20.05.20"
   },
-  {
-    "title": "Dies ist ein sehr langer Titel Lorem ipsum jfd jkhfsj sfmsfgisf",
-    "date": "12.05. - 20.05.20"
-  },
-  { "title": "Basel", "date": "12.05. - 20.05.20" },
-  { "title": "Basel", "date": "12.05. - 20.05.20" },
-  { "title": "", "date": "12.05. - 20.05.20" },
-  { "title": "Basel", "date": "12.05. - 20.05.20" },
-  { "title": "Basel", "date": "" },
-  { "title": "", "date": "" },
-  {
-    "title": "Basel",
-    "date": "12.05. - 20.05.20 kjdfbkdbf  jsdjhsfb fjsgfiskhf nfddkmdsm bidfb digfbd fdjfdf dgfidghfkd"
-  },
-  {
-    "title": "Basel",
-    "date": "Es ist ein lang erwiesener Fakt, dass ein Leser vom Text abgelenkt wird, wenn er sich ein Layout ansieht. Der Punkt, Lorem Ipsum zu nutzen, ist, dass es mehr oder weniger die normale Anordnung von Buchstaben darstellt und somit nach lesbarer Sprache aussieht. Viele Desktop Publisher und Webeditoren nutzen mittlerweile Lorem Ipsum als den Standardtext, auch die Suche im Internet nach macht viele Webseiten sichtbar"
-  }
+  { "title": "Osterurlaub Kanaren", "date": "12.05. - 20.05.20" },
+  { "title": "Griechenland - Kreta", "date": "23.11. - 28.11.19" },
+  { "title": "Gran Canaria, Kanaren/Spanien", "date": "12.05. - 20.05.20" },
+  { "title": "Amsterdam Wochenendtrip", "date": "Herbst 2019" },
+  { "title": "Basel", "date": "März 2019 - Fasnacht" },
+  { "title": "Thailand - Koh Samui", "date": "Juli / 2017" }
 ]
