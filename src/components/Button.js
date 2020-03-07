@@ -3,12 +3,12 @@ import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 
 Button.propTypes = {
-  disable: PropTypes.bool,
+  isDisabled: PropTypes.bool,
   content: PropTypes.string,
 }
 
-export default function Button({ content, disable }) {
-  return <ButtonPrimary disabled={disable}>{content}</ButtonPrimary>
+export default function Button({ content, isDisabled }) {
+  return <ButtonPrimary disabled={isDisabled}>{content}</ButtonPrimary>
 }
 
 const ButtonPrimary = styled.button`

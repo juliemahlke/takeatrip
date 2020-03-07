@@ -11,7 +11,7 @@ Button.propTypes = {
 }
 
 export default function CreateTrip({ addTripData }) {
-  const [disable, setDisable] = useState(true)
+  const [disabled, setDisabled] = useState(true)
   const history = useHistory()
 
   return (
@@ -25,7 +25,7 @@ export default function CreateTrip({ addTripData }) {
         name="title"
         placeholder="Titel des Trips"
         onChange={handleChange}
-        isRequired={true}
+        required={true}
       ></InputText>
 
       <label>
@@ -38,7 +38,7 @@ export default function CreateTrip({ addTripData }) {
         required={false}
       ></InputText>
 
-      <Button content="Trip speichern" disable={disable} />
+      <Button content="Trip speichern" isDisabled={disabled} />
     </FormStyled>
   )
 
@@ -52,7 +52,7 @@ export default function CreateTrip({ addTripData }) {
   }
 
   function handleChange(event) {
-    event.target.value === '' ? setDisable(true) : setDisable(false)
+    event.target.value === '' ? setDisabled(true) : setDisabled(false)
   }
 }
 
