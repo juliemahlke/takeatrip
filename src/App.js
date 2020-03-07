@@ -1,19 +1,27 @@
 import React, { useState } from 'react'
-import TripList from './components/TripList'
+import {
+  BrowserRouter as Router,
+  NavLink,
+  Route,
+  Switch,
+} from 'react-router-dom'
 import styled from 'styled-components/macro'
-import CreateTrip from './components/CreateTrip'
-import TripsData from './data/tripsdata.json'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Icons from './common/Icons'
 import ButtonAdd from './components/ButtonAdd'
+import CreateTrip from './components/CreateTrip'
+import TripList from './components/TripList'
+import TripsData from './data/tripsdata.json'
+import Icons from './common/Icons'
 
 function App() {
-  const [trips, setTrips] = useState(TripsData)
+  const tripsData = TripsData ? TripsData : []
+  const [trips, setTrips] = useState(tripsData)
+  const [toggle, setToggle] = useState(true)
 
   return (
     <Router>
-      <ButtonAdd />
-
+      <NavLink onClick={() => setToggle(!toggle)} to="/create">
+        <ButtonAdd />
+      </NavLink>
       <AppStyled>
         <Switch>
           <Route exact path="/">
