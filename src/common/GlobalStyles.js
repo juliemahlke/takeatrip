@@ -19,8 +19,6 @@ export default createGlobalStyle`
     font-family: 'Fredoka One';
     font-size: 28px;
     font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.14;
     letter-spacing: 0.56px;
     text-align: center;

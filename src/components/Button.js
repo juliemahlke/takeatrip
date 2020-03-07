@@ -16,8 +16,7 @@ const ButtonPrimary = styled.button`
   color: #ffffff;
   border: 0;
   padding: 10px 30px;
-  display: inline-block;
-  margin: 30px;
+  margin: 30px 0;
 
   &:disabled {
     background: grey;

@@ -5,6 +5,8 @@ import CreateTrip from './components/CreateTrip'
 import TripsData from './data/tripsdata.json'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Icons from './common/Icons'
 
 function App() {
   const [trips, setTrips] = useState(TripsData)
@@ -12,11 +14,10 @@ function App() {
 
   useEffect(() => {}, [toggle])
 
-  //console.log(trips)
   return (
     <Router>
       <ButtonStyled onClick={() => setToggle(!toggle)} to="/create">
-        +
+        <FontAwesomeIcon icon={['fas', 'plus']} />
       </ButtonStyled>
 
       <AppStyled>
@@ -53,7 +54,7 @@ const ButtonStyled = styled(NavLink)`
   border-radius: 50%;
   font-family: 'Fredoka One';
   font-size: 20px;
-  line-height: 1.2;
+  line-height: 1.5;
   letter-spacing: 0.4px;
   text-align: center;
   background-color: #f85a8e;
