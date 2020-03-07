@@ -17,9 +17,11 @@ const ButtonPrimary = styled.button`
   border: 0;
   padding: 10px 30px;
   margin: 30px 0;
+  cursor: pointer;
 
   &:disabled {
     background: grey;
     color: lightgrey;
+    cursor: default;
   }
 `
