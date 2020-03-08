@@ -29,7 +29,7 @@ export default function CreateTrip({ addTripData }) {
       ></InputText>
 
       <label>
-        <strong>Wann</strong> möchtest Du verreisen?
+        <strong>Wann</strong> möchtest Du reisen?
       </label>
       <InputText
         name="date"
