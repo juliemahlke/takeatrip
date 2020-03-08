@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, createRef } from 'react'
 import styled from 'styled-components/macro'
 import Button from './Button'
 import ButtonCancel from './ButtonCancel'
@@ -25,17 +25,17 @@ export default function CreateTrip({ addTripData }) {
         name="title"
         placeholder="Titel des Trips"
         onChange={handleChange}
-        required={true}
+        isRequired={true}
       ></InputText>
 
       <label>
-        <strong>Wann</strong> möchtest du verreisen?
+        <strong>Wann</strong> möchtest Du verreisen?
       </label>
       <InputText
         name="date"
-        placeholder="Reisezeitraum"
+        placeholder="TT.MM. - TT.MM.JJ"
         onChange={handleChange}
-        required={false}
+        isRequired={false}
       ></InputText>
 
       <Button content="Trip speichern" isDisabled={disabled} />
