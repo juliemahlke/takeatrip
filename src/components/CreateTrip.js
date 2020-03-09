@@ -38,7 +38,7 @@ export default function CreateTrip({ addTripData }) {
         required={false}
       ></InputText>
 
-      <Button content="Trip speichern" isDisabled={disabled} />
+      <Button label="Trip speichern" isDisabled={disabled} />
     </FormStyled>
   )
 
