@@ -1,8 +1,8 @@
 import React, { useState, useEffect, createRef } from 'react'
 import styled from 'styled-components/macro'
-import Button from './Button'
-import ButtonCancel from './ButtonCancel'
-import InputText from './InputText'
+import Button from '../form/Button'
+import ButtonCancel from '../form/ButtonCancel'
+import InputText from '../form/InputText'
 import { useHistory } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
@@ -40,7 +40,7 @@ export default function CreateTrip({ addTripData }) {
         isRequired={false}
       ></InputText>
 
-      <Button content="Trip speichern" isDisabled={disabled} />
+      <Button label="Trip speichern" isDisabled={disabled} />
     </FormStyled>
   )
 
