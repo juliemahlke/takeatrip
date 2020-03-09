@@ -1,5 +1,5 @@
-import React from './node_modules/react'
-import { withKnobs } from './node_modules/@storybook/addon-knobs'
+import React from 'react'
+import { withKnobs } from '@storybook/addon-knobs'
 import TripListItem from './TripListItem'
 
 export default {
