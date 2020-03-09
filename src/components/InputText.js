@@ -9,10 +9,16 @@ InputText.propTypes = {
   required: PropTypes.bool,
 }
 
-export default function InputText({ name, placeholder, onChange, isRequired }) {
+export default function InputText({
+  type,
+  name,
+  placeholder,
+  onChange,
+  isRequired,
+}) {
   return (
     <InputStyled
-      type="text"
+      type={type}
       name={name}
       placeholder={placeholder}
       onChange={onChange}

@@ -22,6 +22,7 @@ export default function CreateTrip({ addTripData }) {
         <strong>Wohin</strong> möchtest Du reisen?
       </label>
       <InputText
+        type="text"
         name="title"
         placeholder="Titel des Trips"
         onChange={handleChange}
@@ -32,6 +33,7 @@ export default function CreateTrip({ addTripData }) {
         <strong>Wann</strong> möchtest Du reisen?
       </label>
       <InputText
+        type="text"
         name="date"
         placeholder="TT.MM. - TT.MM.JJ"
         onChange={handleChange}
