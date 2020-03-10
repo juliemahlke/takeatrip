@@ -7,8 +7,8 @@ Button.propTypes = {
   content: PropTypes.string,
 }
 
-export default function Button({ content, isDisabled }) {
-  return <ButtonPrimary disabled={isDisabled}>{content}</ButtonPrimary>
+export default function Button({ label, isDisabled }) {
+  return <ButtonPrimary disabled={isDisabled}>{label}</ButtonPrimary>
 }
 
 const ButtonPrimary = styled.button`

@@ -1,5 +1,5 @@
 import React from 'react'
-import TripListItem from './TripListItem'
+import TripListItem from '../trip/TripListItem'
 import PropTypes from 'prop-types'
 
 TripList.propTypes = {

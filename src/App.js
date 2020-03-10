@@ -6,9 +6,9 @@ import {
   Switch,
 } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import ButtonAdd from './components/ButtonAdd'
-import CreateTrip from './components/CreateTrip'
-import TripList from './components/TripList'
+import ButtonAdd from './components/form/ButtonAdd'
+import CreateTrip from './components/pages/CreateTrip'
+import TripList from './components/pages/TripList'
 import TripsData from './data/tripsdata.json'
 import Icons from './common/Icons'
 import { tripsRef } from './firebase'
