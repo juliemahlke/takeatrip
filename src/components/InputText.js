@@ -15,6 +15,7 @@ export default function InputText({
   placeholder,
   onChange,
   isRequired,
+  isFocus,
 }) {
   return (
     <InputStyled
@@ -23,6 +24,7 @@ export default function InputText({
       placeholder={placeholder}
       onChange={onChange}
       required={isRequired}
+      autoFocus={isFocus}
     ></InputStyled>
   )
 }

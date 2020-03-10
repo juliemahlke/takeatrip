@@ -27,6 +27,7 @@ export default function CreateTrip({ addTripData }) {
         placeholder="Titel des Trips"
         onChange={handleChange}
         isRequired={true}
+        isFocus={true}
       ></InputText>
 
       <label>
@@ -38,6 +39,7 @@ export default function CreateTrip({ addTripData }) {
         placeholder="TT.MM. - TT.MM.JJ"
         onChange={handleChange}
         isRequired={false}
+        isFocus={false}
       ></InputText>
 
       <Button content="Trip speichern" isDisabled={disabled} />
