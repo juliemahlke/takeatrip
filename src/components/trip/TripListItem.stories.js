@@ -3,7 +3,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import TripListItem from './TripListItem'
 
 export default {
-  title: 'TripListItem',
+  title: 'Trips/TripListItem',
   component: TripListItem,
   decorators: [
     withKnobs,
@@ -19,7 +19,7 @@ export const ItemWithoutDate = () => (
   <TripListItem trip={{ title: 'Barcelona', date: '' }} />
 )
 
-export const ItemWithlongTitle = () => (
+export const ItemWithLongTitle = () => (
   <TripListItem
     trip={{
       title:
