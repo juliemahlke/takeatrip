@@ -11,6 +11,7 @@ import CreateTrip from './components/pages/CreateTrip'
 import TripList from './components/pages/TripList'
 import TripsData from './data/tripsdata.json'
 import Icons from './common/Icons'
+import { tripsRef } from './firebase'
 
 function App() {
   const tripsData = TripsData ? TripsData : []
