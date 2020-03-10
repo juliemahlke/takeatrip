@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createRef } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import Button from '../form/Button'
 import ButtonCancel from '../form/ButtonCancel'

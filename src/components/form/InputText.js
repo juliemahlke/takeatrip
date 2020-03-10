@@ -3,10 +3,12 @@ import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 
 InputText.propTypes = {
+  type: propTypes.string,
   name: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   required: PropTypes.bool,
+  autoFocus: PropTypes.string,
 }
 
 export default function InputText({
