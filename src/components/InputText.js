@@ -24,7 +24,7 @@ export default function InputText({
       placeholder={placeholder}
       onChange={onChange}
       required={isRequired}
-      autoFocus={isFocus}
+      autofocus={isFocus}
     ></InputStyled>
   )
 }
