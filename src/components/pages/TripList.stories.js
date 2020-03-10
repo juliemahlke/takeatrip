@@ -3,7 +3,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import TripList from './TripList'
 
 export default {
-  title: 'TripList',
+  title: 'Trips/TripList',
   component: TripList,
   decorators: [
     withKnobs,

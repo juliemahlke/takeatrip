@@ -13,6 +13,6 @@ export default {
 
 export const inputDefault = () => <InputText />
 
-export const inputWidthPlaceholder = () => (
+export const inputPlaceholder = () => (
   <InputText placeholder={text('Placeholder', 'Any placeholder')} />
 )

@@ -5,7 +5,7 @@ import ButtonAdd from './ButtonAdd'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
 
 export default {
-  title: 'Buttons',
+  title: 'Form/Buttons',
   component: ButtonPrimary,
   decorators: [
     withKnobs,
