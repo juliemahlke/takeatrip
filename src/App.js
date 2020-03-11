@@ -4,6 +4,7 @@ import {
   NavLink,
   Route,
   Switch,
+  Link,
 } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import ButtonAdd from './components/form/ButtonAdd'
@@ -11,7 +12,8 @@ import CreateTrip from './components/pages/CreateTrip'
 import TripList from './components/pages/TripList'
 import TripsData from './data/tripsdata.json'
 import Icons from './common/Icons'
-import { tripsRef } from './firebase'
+// import { tripsRef } from './firebase'
+import Trip from './components/pages/Trip'
 
 function App() {
   const tripsData = TripsData ? TripsData : []
@@ -23,6 +25,9 @@ function App() {
       <NavLink onClick={() => setToggle(!toggle)} to="/create">
         <ButtonAdd />
       </NavLink>
+
+      <Link to="/trip">Trip</Link>
+
       <AppStyled>
         <Switch>
           <Route exact path="/">
