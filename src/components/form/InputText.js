@@ -7,6 +7,7 @@ InputText.propTypes = {
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   required: PropTypes.bool,
+  isFocus: PropTypes.bool,
 }
 
 export default function InputText({

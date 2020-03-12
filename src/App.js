@@ -1,30 +1,21 @@
 import React, { useState } from 'react'
-import {
-  BrowserRouter as Router,
-  NavLink,
-  Route,
-  Switch,
-} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import ButtonAdd from './components/form/ButtonAdd'
 import CreateTrip from './components/pages/CreateTrip'
 import TripList from './components/pages/TripList'
 import TripsData from './data/tripsdata.json'
 import Icons from './common/Icons'
-import { tripsRef } from './firebase'
+// import { tripsRef } from './firebase'
 import Header from './common/Header'
+import Trip from './components/pages/Trip'
+import Navigation from './common/Navigation'
 
 function App() {
   const tripsData = TripsData ? TripsData : []
   const [trips, setTrips] = useState(tripsData)
-  const [toggle, setToggle] = useState(true)
 
   return (
     <Router>
-      <NavLink onClick={() => setToggle(!toggle)} to="/create">
-        <ButtonAdd />
-      </NavLink>
-
       <AppStyled>
         <Header />
         <MainStyled>
@@ -35,9 +26,12 @@ function App() {
             <Route path="/create">
               <CreateTrip addTripData={createTrip()} />
             </Route>
+            <Route path="/trip/:id">
+              <Trip trips={trips} />
+            </Route>
           </Switch>
         </MainStyled>
-        {/* <Navigaton /> */}
+        <Navigation />
       </AppStyled>
     </Router>
   )
@@ -58,4 +52,6 @@ const AppStyled = styled.div`
 
 const MainStyled = styled.main`
   overflow-y: scroll;
+  max-width: 568px;
+  position: relative;
 `
