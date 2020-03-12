@@ -4,7 +4,7 @@ import styled from 'styled-components/macro'
 import CreateTrip from './components/pages/CreateTrip'
 import TripList from './components/pages/TripList'
 import TripsData from './data/tripsdata.json'
-import Icons from './common/Icons'
+import Icons from './common/Icons' // @ts-ignore
 import Trip from './components/pages/Trip'
 import Navigation from './common/Navigation'
 
