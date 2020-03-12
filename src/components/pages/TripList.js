@@ -1,8 +1,7 @@
-import React from 'react'
-import TripListItem from '../trip/TripListItem'
 import PropTypes from 'prop-types'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
-import Trip from '../pages/Trip'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import TripListItem from '../trip/TripListItem'
 
 TripList.propTypes = {
   trips: PropTypes.array,

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import {
   BrowserRouter as Router,
   NavLink,
@@ -26,8 +27,6 @@ function App() {
         <ButtonAdd />
       </NavLink>
 
-      <Link to="/trip">Trip</Link>
-
       <AppStyled>
         <Switch>
           <Route exact path="/">
@@ -35,6 +34,9 @@ function App() {
           </Route>
           <Route path="/create">
             <CreateTrip addTripData={createTrip()} />
+          </Route>
+          <Route path="/trip/:id">
+            <Trip trips={trips} />
           </Route>
         </Switch>
       </AppStyled>
