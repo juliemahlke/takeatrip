@@ -52,6 +52,5 @@ const AppStyled = styled.div`
 
 const MainStyled = styled.main`
   overflow-y: scroll;
-  max-width: 568px;
   position: relative;
 `
