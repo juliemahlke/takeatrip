@@ -1,21 +1,19 @@
 import React, { useEffect } from 'react'
 import defaultImg from '../../images/default-image.jpg'
 import { useParams } from 'react-router-dom'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 export default function Trip({ trips }) {
   const params = useParams()
   const trip = trips.find(trip => trip.id === params.id)
 
-  useEffect(() => {
-    console.log(params)
-    console.log(trips)
-    console.log(trip)
-  })
-
   return (
     <TripStyled>
+      <Link exact to="/">
+        back
+      </Link>
       <img src={defaultImg} width="200" alt=""></img>
       <WrapperStyled>
         <Date>
@@ -52,6 +50,7 @@ const TripStyled = styled.section`
   img {
     width: 100%;
     object-fit: cover;
+    height: 300px;
   }
 `
 
