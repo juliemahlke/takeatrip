@@ -1,17 +1,10 @@
 import React, { useState } from 'react'
-import {
-  BrowserRouter as Router,
-  NavLink,
-  Route,
-  Switch,
-  Link,
-} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import CreateTrip from './components/pages/CreateTrip'
 import TripList from './components/pages/TripList'
 import TripsData from './data/tripsdata.json'
 import Icons from './common/Icons'
-// import { tripsRef } from './firebase'
 import Trip from './components/pages/Trip'
 import Navigation from './common/Navigation'
 

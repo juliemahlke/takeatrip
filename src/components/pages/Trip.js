@@ -1,9 +1,14 @@
-import React, { useEffect } from 'react'
+import PropTypes from 'prop-types'
+import React from 'react'
 import defaultImg from '../../images/default-image.jpg'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
+
+Trip.propTypes = {
+  trips: PropTypes.array,
+}
 
 export default function Trip({ trips }) {
   const params = useParams()
@@ -11,7 +16,7 @@ export default function Trip({ trips }) {
 
   return (
     <>
-      <Link exact to="/">
+      <Link exact="true" to="/">
         back
       </Link>
 
