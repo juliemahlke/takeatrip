@@ -10,31 +10,33 @@ export default function Trip({ trips }) {
   const trip = trips.find(trip => trip.id === params.id)
 
   return (
-    <TripStyled>
+    <>
       <Link exact to="/">
         back
       </Link>
-      <img src={defaultImg} width="200" alt=""></img>
-      <WrapperStyled>
-        <Date>
-          <FontAwesomeIcon className="icon" icon={['fal', 'calendar-alt']} />
-          {trip.date}
-        </Date>
-        <h1>{trip.title}</h1>
-        <Location>USA</Location>
-        <a href="https://www.google.de">
-          <FontAwesomeIcon className="icon" icon={['fal', 'plus-circle']} />
-          Notiz hinzufügen
-        </a>
-      </WrapperStyled>
-    </TripStyled>
+
+      <TripStyled>
+        <img src={defaultImg} width="200" alt=""></img>
+        <WrapperStyled>
+          <Date>
+            <FontAwesomeIcon className="icon" icon={['fal', 'calendar-alt']} />
+            {trip.date}
+          </Date>
+          <h1>{trip.title}</h1>
+          <Location>USA</Location>
+          <a href="https://www.google.de">
+            <FontAwesomeIcon className="icon" icon={['fal', 'plus-circle']} />
+            Notiz hinzufügen
+          </a>
+        </WrapperStyled>
+      </TripStyled>
+    </>
   )
 }
 
 const TripStyled = styled.section`
   text-align: left;
   background: #fff;
-  height: 100vh;
 
   h1 {
     font-family: 'IBM Plex Sans';
