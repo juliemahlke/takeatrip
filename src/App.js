@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import {
   BrowserRouter as Router,
   NavLink,
@@ -8,25 +7,20 @@ import {
   Link,
 } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import ButtonAdd from './components/form/ButtonAdd'
 import CreateTrip from './components/pages/CreateTrip'
 import TripList from './components/pages/TripList'
 import TripsData from './data/tripsdata.json'
 import Icons from './common/Icons'
 // import { tripsRef } from './firebase'
 import Trip from './components/pages/Trip'
+import Navigation from './common/Navigation'
 
 function App() {
   const tripsData = TripsData ? TripsData : []
   const [trips, setTrips] = useState(tripsData)
-  const [toggle, setToggle] = useState(true)
 
   return (
     <Router>
-      <NavLink onClick={() => setToggle(!toggle)} to="/create">
-        <ButtonAdd />
-      </NavLink>
-
       <AppStyled>
         <Switch>
           <Route exact path="/">
@@ -39,6 +33,7 @@ function App() {
             <Trip trips={trips} />
           </Route>
         </Switch>
+        <Navigation />
       </AppStyled>
     </Router>
   )
@@ -51,6 +46,6 @@ function App() {
 export default App
 
 const AppStyled = styled.div`
-  max-width: 768px;
+  max-width: 568px;
   position: relative;
 `
