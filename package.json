@@ -20,7 +20,8 @@
     "react-scripts": "3.4.0",
     "react-uid": "2.2.0",
     "storybook": "5.3.14",
-    "styled-components": "5.0.1"
+    "styled-components": "5.0.1",
+    "uuid": "7.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

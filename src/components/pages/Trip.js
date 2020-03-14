@@ -22,13 +22,13 @@ export default function Trip({ trips }) {
       <img src={defaultImg} width="200" alt=""></img>
       <WrapperStyled>
         <Date>
-          <FontAwesomeIcon className="icon" icon={['fal', 'calendar-alt']} />
+          <FontAwesomeIcon className="icon" icon={['far', 'calendar-alt']} />
           {trip.date}
         </Date>
         <h1>{trip.title}</h1>
         <Location>USA</Location>
         <a href="https://www.google.de">
-          <FontAwesomeIcon className="icon" icon={['fal', 'plus-circle']} />
+          <FontAwesomeIcon className="icon" icon={['fas', 'plus-circle']} />
           Notiz hinzufügen
         </a>
       </WrapperStyled>
