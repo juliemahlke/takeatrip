@@ -51,12 +51,13 @@ export default App
 
 const AppStyled = styled.div`
   display: grid;
-  gap: 2px;
   grid-template-rows: 60px auto;
   height: 100vh;
+  position: relative;
 `
 
 const MainStyled = styled.main`
   overflow-y: scroll;
   position: relative;
+  padding: 25px;
 `

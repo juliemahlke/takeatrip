@@ -71,8 +71,10 @@ const FormStyled = styled.form`
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16);
   background-color: #ffffff;
   padding: 30px;
+  margin: 20px auto;
   text-align: center;
   display: grid;
+  max-width: 742px;
 
   label {
     font-size: 18px;

@@ -10,10 +10,8 @@ export default createGlobalStyle`
     font-style: normal;
     background: #F5F5F5;
     color: #333;
-    display:flex;
-    justify-content: center;
     padding: 0; 
-    margin:0
+    margin:0;
   }
 
   h1 {
