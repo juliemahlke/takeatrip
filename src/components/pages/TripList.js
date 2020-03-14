@@ -11,7 +11,6 @@ TripList.propTypes = {
 export default function TripList({ trips }) {
   return (
     <TripListStyled>
-      <h1>My Trips</h1>
       {trips.map(trip => (
         <Link to={`/trip/${trip.id}`} key={trip.id}>
           <TripListItem trip={trip} />
