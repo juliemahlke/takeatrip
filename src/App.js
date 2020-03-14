@@ -15,8 +15,8 @@ function App() {
   const [trips, setTrips] = useState(loadFromLocal('trips') || tripsData)
 
   useEffect(() => {
-    console.log(trips)
-  })
+    saveToLocal('trips', trips)
+  }, [trips])
 
   return (
     <Router>
@@ -43,7 +43,6 @@ function App() {
   function addTrip(trip) {
     const newTrips = [trip, ...trips]
     setTrips(newTrips)
-    saveToLocal('trips', newTrips)
   }
 }
 

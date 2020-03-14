@@ -21,13 +21,11 @@ export default function Trip({ trips }) {
     <TripStyled>
       <img src={defaultImg} width="200" alt=""></img>
       <WrapperStyled>
-        {trip.date.length ? (
+        {trip.date && (
           <Date>
             <FontAwesomeIcon className="icon" icon={['far', 'calendar-alt']} />
             {trip.date}
           </Date>
-        ) : (
-          ''
         )}
         <h1>{trip.title}</h1>
         <Location>USA</Location>
