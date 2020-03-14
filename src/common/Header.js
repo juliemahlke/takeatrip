@@ -35,6 +35,7 @@ const HeaderStyled = styled.header`
   text-align: center;
   margin: 0;
   padding: 0 20px;
+  border-bottom: solid 1px #e5e5e5;
 
   a,
   a:hover {

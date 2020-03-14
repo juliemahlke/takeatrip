@@ -21,14 +21,16 @@ export default function Trip({ trips }) {
     <TripStyled>
       <img src={defaultImg} width="200" alt=""></img>
       <WrapperStyled>
-        <Date>
-          <FontAwesomeIcon className="icon" icon={['fal', 'calendar-alt']} />
-          {trip.date}
-        </Date>
+        {trip.date && (
+          <Date>
+            <FontAwesomeIcon className="icon" icon={['far', 'calendar-alt']} />
+            {trip.date}
+          </Date>
+        )}
         <h1>{trip.title}</h1>
         <Location>USA</Location>
         <a href="https://www.google.de">
-          <FontAwesomeIcon className="icon" icon={['fal', 'plus-circle']} />
+          <FontAwesomeIcon className="icon" icon={['fas', 'plus-circle']} />
           Notiz hinzufügen
         </a>
       </WrapperStyled>
@@ -54,7 +56,8 @@ const TripStyled = styled.section`
   img {
     width: 100%;
     object-fit: cover;
-    height: 300px;
+    height: 150px;
+    object-position: 50% 70%;
   }
 `
 

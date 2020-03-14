@@ -1,4 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Trip App
+
+This React-App helps you to organize and plan your trips in the future.
+
+## Quickstart
+
+1. Install npm
+
+```
+npm install npm
+```
+
+2. Install storybook
+
+```
+npmx -p @storybook/cli sb init
+```
+
+3. Install Font Awesome
+
+```
+npm i --save @fortawesome/fontawesome-svg-core
+npm i --save @fortawesome/free-solid-svg-icons
+npm i --save @fortawesome/free-regular-svg-icons
+npm i --save @fortawesome/react-fontawesome
+```
 
 ## Available Scripts
 

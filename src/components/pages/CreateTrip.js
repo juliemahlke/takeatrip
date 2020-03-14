@@ -5,7 +5,7 @@ import ButtonCancel from '../form/ButtonCancel'
 import InputText from '../form/InputText'
 import { useHistory } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { useUID } from 'react-uid'
+import { v4 as uuidv4 } from 'uuid'
 
 Button.propTypes = {
   addTripData: PropTypes.func,
@@ -14,7 +14,7 @@ Button.propTypes = {
 export default function CreateTrip({ addTripData }) {
   const [disabled, setDisabled] = useState(true)
   const history = useHistory()
-  const uniqueId = useUID()
+  const uniqueId = uuidv4()
 
   return (
     <FormStyled onSubmit={handleSubmit}>
@@ -71,8 +71,10 @@ const FormStyled = styled.form`
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16);
   background-color: #ffffff;
   padding: 30px;
+  margin: 20px auto;
   text-align: center;
   display: grid;
+  max-width: 742px;
 
   label {
     font-size: 18px;
