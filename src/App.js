@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import CreateTrip from './components/pages/CreateTrip'
@@ -8,10 +8,15 @@ import Icons from './common/Icons'
 import Header from './common/Header'
 import Trip from './components/pages/Trip'
 import Navigation from './common/Navigation'
+import { loadFromLocal, saveToLocal } from './common/utils'
 
 function App() {
   const tripsData = TripsData ? TripsData : []
-  const [trips, setTrips] = useState(tripsData)
+  const [trips, setTrips] = useState(loadFromLocal('trips') || tripsData)
+
+  useEffect(() => {
+    console.log(trips)
+  })
 
   return (
     <Router>
@@ -23,7 +28,7 @@ function App() {
               <TripList trips={trips} />
             </Route>
             <Route path="/create">
-              <CreateTrip addTripData={createTrip()} />
+              <CreateTrip addTripData={addTrip} />
             </Route>
             <Route path="/trip/:id">
               <Trip trips={trips} />
@@ -35,8 +40,10 @@ function App() {
     </Router>
   )
 
-  function createTrip() {
-    return trip => setTrips([trip, ...trips])
+  function addTrip(trip) {
+    const newTrips = [trip, ...trips]
+    setTrips(newTrips)
+    saveToLocal('trips', newTrips)
   }
 }
 
