@@ -5,6 +5,7 @@ import CreateTrip from './components/pages/CreateTrip'
 import TripList from './components/pages/TripList'
 import TripsData from './data/tripsdata.json'
 import Icons from './common/Icons'
+import Header from './common/Header'
 import Trip from './components/pages/Trip'
 import Navigation from './common/Navigation'
 
@@ -15,17 +16,20 @@ function App() {
   return (
     <Router>
       <AppStyled>
-        <Switch>
-          <Route exact path="/">
-            <TripList trips={trips} />
-          </Route>
-          <Route path="/create">
-            <CreateTrip addTripData={createTrip()} />
-          </Route>
-          <Route path="/trip/:id">
-            <Trip trips={trips} />
-          </Route>
-        </Switch>
+        <Header />
+        <MainStyled>
+          <Switch>
+            <Route exact path="/">
+              <TripList trips={trips} />
+            </Route>
+            <Route path="/create">
+              <CreateTrip addTripData={createTrip()} />
+            </Route>
+            <Route path="/trip/:id">
+              <Trip trips={trips} />
+            </Route>
+          </Switch>
+        </MainStyled>
         <Navigation />
       </AppStyled>
     </Router>
@@ -39,6 +43,13 @@ function App() {
 export default App
 
 const AppStyled = styled.div`
-  max-width: 568px;
+  display: grid;
+  gap: 2px;
+  grid-template-rows: 60px auto;
+  height: 100vh;
+`
+
+const MainStyled = styled.main`
+  overflow-y: scroll;
   position: relative;
 `

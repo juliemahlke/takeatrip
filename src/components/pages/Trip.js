@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useEffect } from 'react'
 import defaultImg from '../../images/default-image.jpg'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 Trip.propTypes = {
   trips: PropTypes.array,
@@ -14,28 +13,26 @@ export default function Trip({ trips }) {
   const params = useParams()
   const trip = trips.find(trip => trip.id === params.id)
 
-  return (
-    <>
-      <Link exact="true" to="/">
-        back
-      </Link>
+  useEffect(() => {
+    document.title = 'Trip | ' + trip.title
+  })
 
-      <TripStyled>
-        <img src={defaultImg} width="200" alt=""></img>
-        <WrapperStyled>
-          <Date>
-            <FontAwesomeIcon className="icon" icon={['fal', 'calendar-alt']} />
-            {trip.date}
-          </Date>
-          <h1>{trip.title}</h1>
-          <Location>USA</Location>
-          <a href="https://www.google.de">
-            <FontAwesomeIcon className="icon" icon={['fal', 'plus-circle']} />
-            Notiz hinzufügen
-          </a>
-        </WrapperStyled>
-      </TripStyled>
-    </>
+  return (
+    <TripStyled>
+      <img src={defaultImg} width="200" alt=""></img>
+      <WrapperStyled>
+        <Date>
+          <FontAwesomeIcon className="icon" icon={['fal', 'calendar-alt']} />
+          {trip.date}
+        </Date>
+        <h1>{trip.title}</h1>
+        <Location>USA</Location>
+        <a href="https://www.google.de">
+          <FontAwesomeIcon className="icon" icon={['fal', 'plus-circle']} />
+          Notiz hinzufügen
+        </a>
+      </WrapperStyled>
+    </TripStyled>
   )
 }
 
