@@ -7,7 +7,9 @@ export default createGlobalStyle`
 
   body {
     font-family: 'IBM Plex Sans';
+    font-stretch: normal;
     font-style: normal;
+    font-weight: normal;
     background: #F5F5F5;
     color: #333;
     padding: 0; 

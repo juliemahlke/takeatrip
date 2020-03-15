@@ -21,6 +21,8 @@ export default function TripList({ trips }) {
 }
 
 const TripListStyled = styled.section`
+  padding: 25px;
+
   a,
   a:hover {
     text-decoration: none;
