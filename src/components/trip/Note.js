@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
+
+Note.propTypes = {
+  title: PropTypes.string,
+  content: PropTypes.string,
+}
 
 export default function Note({ title, content }) {
   const [fulltextVisible, setFulltextVisible] = useState(false)
