@@ -33,8 +33,8 @@ export default function Trip({ trips, deleteTrip }) {
         <LinkStyled href="https://www.google.de">
           <FontAwesomeIcon className="icon" icon={['fas', 'plus-circle']} />
           Notiz hinzufügen
-          <button onClick={handleDelete}>delete trip</button>
         </LinkStyled>
+        <button onClick={handleDelete}>delete trip</button>
         <NoteList />
       </WrapperStyled>
     </TripStyled>

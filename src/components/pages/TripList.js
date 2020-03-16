@@ -8,7 +8,7 @@ TripList.propTypes = {
   trips: PropTypes.array,
 }
 
-export default function TripList({ trips, deleteTrip }) {
+export default function TripList({ trips }) {
   return (
     <TripListStyled>
       {trips.map(trip => (
