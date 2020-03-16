@@ -30,7 +30,7 @@ export default function Trip({ trips }) {
         )}
         <h1>{trip.title}</h1>
         <Location>USA</Location>
-        <LinkStyled href="https://www.google.de" className="notelink">
+        <LinkStyled href="https://www.google.de">
           <FontAwesomeIcon className="icon" icon={['fas', 'plus-circle']} />
           Notiz hinzufügen
         </LinkStyled>

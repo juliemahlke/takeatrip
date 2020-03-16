@@ -14,7 +14,7 @@ export default function Note({ title, content }) {
   return (
     <NoteStyled onClick={showFulltext}>
       <EntryType>
-        <FontAwesomeIcon className="icon" icon={['far', 'comment-dots']} />{' '}
+        <FontAwesomeIcon className="icon" icon={['far', 'comment-dots']} />
         Notiz
       </EntryType>
 
