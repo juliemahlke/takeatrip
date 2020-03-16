@@ -21,6 +21,8 @@ export default function TripList({ trips, deleteTrip }) {
 }
 
 const TripListStyled = styled.section`
+  padding: 25px;
+
   a,
   a:hover {
     text-decoration: none;
