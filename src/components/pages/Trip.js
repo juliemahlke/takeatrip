@@ -5,13 +5,16 @@ import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import NoteList from '../trip/NoteList'
+import { useHistory } from 'react-router-dom'
 
 Trip.propTypes = {
   trips: PropTypes.array,
+  deleteTrip: PropTypes.func,
 }
 
-export default function Trip({ trips }) {
+export default function Trip({ trips, deleteTrip }) {
   const params = useParams()
+  const history = useHistory()
   const trip = trips.find(trip => trip.id === params.id)
 
   useEffect(() => {
@@ -35,9 +38,19 @@ export default function Trip({ trips }) {
           Notiz hinzufügen
         </LinkStyled>
         <NoteList />
+        <div className="center">
+          <ButtonStyled onClick={handleDelete}>
+            <FontAwesomeIcon className="icon" icon={['far', 'trash-alt']} />
+          </ButtonStyled>
+        </div>
       </WrapperStyled>
     </TripStyled>
   )
+
+  function handleDelete() {
+    deleteTrip(trip)
+    history.push('/')
+  }
 }
 
 const TripStyled = styled.section`
@@ -77,6 +90,7 @@ const Date = styled.div`
   font-weight: 300;
   line-height: 1.25;
   color: #747474;
+  align-items: center;
 `
 
 const Location = styled.div`
@@ -91,4 +105,15 @@ const LinkStyled = styled.a`
   margin-bottom: 40px;
   display: block;
   font-weight: 400;
+`
+
+const ButtonStyled = styled.button`
+  margin: 40px 0;
+  border: 0;
+  background: transparent;
+
+  .icon {
+    font-size: 20px;
+    color: #747474;
+  }
 `

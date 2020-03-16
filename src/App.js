@@ -12,9 +12,10 @@ import { loadFromLocal, saveToLocal } from './common/utils'
 
 function App() {
   const tripsData = TripsData ? TripsData : []
-  const [trips, setTrips] = useState(loadFromLocal('trips') || tripsData)
+  const [trips, setTrips] = useState(loadFromLocal('trips') || TripsData)
 
   useEffect(() => {
+    console.log(trips)
     saveToLocal('trips', trips)
   }, [trips])
 
@@ -31,7 +32,7 @@ function App() {
               <CreateTrip addTripData={addTrip} />
             </Route>
             <Route path="/trip/:id">
-              <Trip trips={trips} />
+              <Trip trips={trips} deleteTrip={deleteTrip} />
             </Route>
           </Switch>
         </MainStyled>
@@ -43,6 +44,13 @@ function App() {
   function addTrip(trip) {
     const newTrips = [trip, ...trips]
     setTrips(newTrips)
+  }
+
+  function deleteTrip(trip) {
+    const index = trips.indexOf(trip)
+    const newTrips = [...trips.slice(0, index), ...trips.slice(index + 1)]
+    setTrips(newTrips)
+    saveToLocal(newTrips)
   }
 }
 
