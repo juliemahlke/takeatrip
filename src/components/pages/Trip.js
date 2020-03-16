@@ -9,6 +9,7 @@ import { useHistory } from 'react-router-dom'
 
 Trip.propTypes = {
   trips: PropTypes.array,
+  deleteTrip: PropTypes.func,
 }
 
 export default function Trip({ trips, deleteTrip }) {
