@@ -47,12 +47,10 @@ function App() {
   }
 
   function deleteTrip(trip) {
-    console.log(trips)
     const index = trips.indexOf(trip)
     const newTrips = [...trips.slice(0, index), ...trips.slice(index + 1)]
     setTrips(newTrips)
-    console.log(newTrips)
-    // saveToLocal(newTrips)
+    saveToLocal(newTrips)
   }
 }
 

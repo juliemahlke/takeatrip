@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import NoteList from '../trip/NoteList'
+import { useHistory } from 'react-router-dom'
 
 Trip.propTypes = {
   trips: PropTypes.array,
@@ -12,6 +13,7 @@ Trip.propTypes = {
 
 export default function Trip({ trips, deleteTrip }) {
   const params = useParams()
+  const history = useHistory()
   const trip = trips.find(trip => trip.id === params.id)
 
   useEffect(() => {
@@ -42,6 +44,7 @@ export default function Trip({ trips, deleteTrip }) {
 
   function handleDelete() {
     deleteTrip(trip)
+    history.push('/')
   }
 }
 
