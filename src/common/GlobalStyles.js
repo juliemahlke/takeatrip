@@ -47,4 +47,12 @@ export default createGlobalStyle`
     font-weight: 300;
     margin-right: 10px;
   }
+
+  button {
+    cursor:pointer;
+  }
+
+  .center {
+    text-align:center;
+  }
 `

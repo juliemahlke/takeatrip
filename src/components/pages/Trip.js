@@ -36,8 +36,12 @@ export default function Trip({ trips, deleteTrip }) {
           <FontAwesomeIcon className="icon" icon={['fas', 'plus-circle']} />
           Notiz hinzufügen
         </LinkStyled>
-        <button onClick={handleDelete}>delete trip</button>
         <NoteList />
+        <div className="center">
+          <ButtonStyled onClick={handleDelete}>
+            <FontAwesomeIcon className="icon" icon={['far', 'trash-alt']} />
+          </ButtonStyled>
+        </div>
       </WrapperStyled>
     </TripStyled>
   )
@@ -85,6 +89,7 @@ const Date = styled.div`
   font-weight: 300;
   line-height: 1.25;
   color: #747474;
+  align-items: center;
 `
 
 const Location = styled.div`
@@ -99,4 +104,15 @@ const LinkStyled = styled.a`
   margin-bottom: 40px;
   display: block;
   font-weight: 400;
+`
+
+const ButtonStyled = styled.button`
+  margin: 40px 0;
+  border: 0;
+  background: transparent;
+
+  .icon {
+    font-size: 20px;
+    color: #747474;
+  }
 `
