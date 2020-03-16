@@ -58,5 +58,4 @@ const AppStyled = styled.div`
 const MainStyled = styled.main`
   overflow-y: scroll;
   position: relative;
-  padding: 25px;
 `

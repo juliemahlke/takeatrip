@@ -4,6 +4,7 @@ import defaultImg from '../../images/default-image.jpg'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import NoteList from '../trip/NoteList'
 
 Trip.propTypes = {
   trips: PropTypes.array,
@@ -29,10 +30,11 @@ export default function Trip({ trips }) {
         )}
         <h1>{trip.title}</h1>
         <Location>USA</Location>
-        <a href="https://www.google.de">
+        <LinkStyled href="https://www.google.de">
           <FontAwesomeIcon className="icon" icon={['fas', 'plus-circle']} />
           Notiz hinzufügen
-        </a>
+        </LinkStyled>
+        <NoteList />
       </WrapperStyled>
     </TripStyled>
   )
@@ -59,6 +61,10 @@ const TripStyled = styled.section`
     height: 150px;
     object-position: 50% 70%;
   }
+
+  .icon {
+    font-size: 16px;
+  }
 `
 
 const WrapperStyled = styled.div`
@@ -79,4 +85,10 @@ const Location = styled.div`
   line-height: 1.28;
   color: #747474;
   margin-bottom: 20px;
+`
+
+const LinkStyled = styled.a`
+  margin-bottom: 40px;
+  display: block;
+  font-weight: 400;
 `

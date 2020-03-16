@@ -75,6 +75,7 @@ const FormStyled = styled.form`
   text-align: center;
   display: grid;
   max-width: 742px;
+  margin: 25px;
 
   label {
     font-size: 18px;
