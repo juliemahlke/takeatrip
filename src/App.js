@@ -31,7 +31,7 @@ function App() {
               <CreateTrip addTripData={addTrip} />
             </Route>
             <Route path="/trip/:id">
-              <Trip trips={trips} />
+              <Trip trips={trips} deleteTrip={deleteTrip} />
             </Route>
           </Switch>
         </MainStyled>
@@ -43,6 +43,15 @@ function App() {
   function addTrip(trip) {
     const newTrips = [trip, ...trips]
     setTrips(newTrips)
+  }
+
+  function deleteTrip(trip) {
+    console.log(trip)
+    const index = trips.indexOf(trip)
+    const newTrips = [...trips.slice(0, index), ...trips.slice(index + 1)]
+    console.log(newTrips)
+    setTrips(newTrips)
+    saveToLocal(newTrips)
   }
 }
 

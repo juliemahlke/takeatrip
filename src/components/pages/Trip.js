@@ -9,7 +9,7 @@ Trip.propTypes = {
   trips: PropTypes.array,
 }
 
-export default function Trip({ trips }) {
+export default function Trip({ trips, deleteTrip }) {
   const params = useParams()
   const trip = trips.find(trip => trip.id === params.id)
 
@@ -33,9 +33,14 @@ export default function Trip({ trips }) {
           <FontAwesomeIcon className="icon" icon={['fas', 'plus-circle']} />
           Notiz hinzufügen
         </a>
+        <button onClick={handleDelete}>delete trip</button>
       </WrapperStyled>
     </TripStyled>
   )
+
+  function handleDelete() {
+    deleteTrip(trip)
+  }
 }
 
 const TripStyled = styled.section`
