@@ -9,6 +9,7 @@ import Header from './common/Header'
 import Trip from './components/pages/Trip'
 import Navigation from './common/Navigation'
 import { loadFromLocal, saveToLocal } from './common/utils'
+import NoteEditor from './components/trip/NoteEditor'
 
 function App() {
   const tripsData = TripsData ? TripsData : []
@@ -33,6 +34,9 @@ function App() {
             </Route>
             <Route path="/trip/:id">
               <Trip trips={trips} deleteTrip={deleteTrip} />
+            </Route>
+            <Route path="/create-note">
+              <NoteEditor />
             </Route>
           </Switch>
         </MainStyled>

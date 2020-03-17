@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import defaultImg from '../../images/default-image.jpg'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import NoteList from '../trip/NoteList'
@@ -33,10 +33,11 @@ export default function Trip({ trips, deleteTrip }) {
         )}
         <h1>{trip.title}</h1>
         <Location>USA</Location>
-        <LinkStyled href="https://www.google.de">
+        <Link to={`/create-note`}>
           <FontAwesomeIcon className="icon" icon={['fas', 'plus-circle']} />
           Notiz hinzufügen
-        </LinkStyled>
+        </Link>
+
         <NoteList />
         <div className="center">
           <ButtonStyled onClick={handleDelete}>
