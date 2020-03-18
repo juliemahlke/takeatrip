@@ -26,8 +26,6 @@ function App() {
   ])
 
   useEffect(() => {
-    console.log('notes:', notes)
-    console.log('trips:', trips)
     saveToLocal('trips', trips)
   }, [trips])
 
@@ -46,7 +44,7 @@ function App() {
             <Route path="/trip/:id">
               <Trip trips={trips} deleteTrip={deleteTrip} notes={notes} />
             </Route>
-            <Route path="/create-note">
+            <Route path="/trip/:id/create-note">
               <NoteEditor addNoteData={addNote} />
             </Route>
           </Switch>

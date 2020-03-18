@@ -33,7 +33,8 @@ export default function Trip({ trips, deleteTrip, notes }) {
         )}
         <h1>{trip.title}</h1>
         <Location>USA</Location>
-        <Link to={`/create-note`}>
+
+        <Link to={`/trip/${trip.id}/create-note`}>
           <FontAwesomeIcon className="icon" icon={['fas', 'plus-circle']} />
           Notiz hinzufügen
         </Link>
