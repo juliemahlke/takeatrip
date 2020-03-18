@@ -13,10 +13,21 @@ import NoteEditor from './components/trip/NoteEditor'
 
 function App() {
   const tripsData = TripsData ? TripsData : []
-  const [trips, setTrips] = useState(loadFromLocal('trips') || TripsData)
+  const [trips, setTrips] = useState(loadFromLocal('trips') || tripsData)
+  const [notes, setNotes] = useState([
+    {
+      title: 'Sehenswürdigkeiten',
+      content: 'Wie erzeuge ich ein neues HTML-Element in JavaScript?',
+    },
+    {
+      title: 'Hotels',
+      content: 'Wie erzeuge ich ',
+    },
+  ])
 
   useEffect(() => {
-    console.log(trips)
+    console.log('notes:', notes)
+    console.log('trips:', trips)
     saveToLocal('trips', trips)
   }, [trips])
 
@@ -33,10 +44,10 @@ function App() {
               <CreateTrip addTripData={addTrip} />
             </Route>
             <Route path="/trip/:id">
-              <Trip trips={trips} deleteTrip={deleteTrip} />
+              <Trip trips={trips} deleteTrip={deleteTrip} notes={notes} />
             </Route>
             <Route path="/create-note">
-              <NoteEditor />
+              <NoteEditor addNoteData={addNote} />
             </Route>
           </Switch>
         </MainStyled>
@@ -55,6 +66,11 @@ function App() {
     const newTrips = [...trips.slice(0, index), ...trips.slice(index + 1)]
     setTrips(newTrips)
     saveToLocal(newTrips)
+  }
+
+  function addNote(note) {
+    const newNotes = [note, ...notes]
+    setNotes(newNotes)
   }
 }
 

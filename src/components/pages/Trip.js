@@ -12,7 +12,7 @@ Trip.propTypes = {
   deleteTrip: PropTypes.func,
 }
 
-export default function Trip({ trips, deleteTrip }) {
+export default function Trip({ trips, deleteTrip, notes }) {
   const params = useParams()
   const history = useHistory()
   const trip = trips.find(trip => trip.id === params.id)
@@ -38,7 +38,7 @@ export default function Trip({ trips, deleteTrip }) {
           Notiz hinzufügen
         </Link>
 
-        <NoteList />
+        <NoteList notes={notes} />
         <div className="center">
           <ButtonStyled onClick={handleDelete}>
             <FontAwesomeIcon className="icon" icon={['far', 'trash-alt']} />
@@ -100,12 +100,6 @@ const Location = styled.div`
   line-height: 1.28;
   color: #747474;
   margin-bottom: 20px;
-`
-
-const LinkStyled = styled.a`
-  margin-bottom: 40px;
-  display: block;
-  font-weight: 400;
 `
 
 const ButtonStyled = styled.button`
