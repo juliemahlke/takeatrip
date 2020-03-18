@@ -4,6 +4,9 @@ import defaultImg from '../../images/default-image.jpg'
 import { useParams, Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons'
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt } from '@fortawesome/free-regular-svg-icons'
 import NoteList from '../trip/NoteList'
 import { useHistory } from 'react-router-dom'
 
@@ -27,7 +30,7 @@ export default function Trip({ trips, deleteTrip, notes }) {
       <WrapperStyled>
         {trip.date && (
           <Date>
-            <FontAwesomeIcon className="icon" icon={['far', 'calendar-alt']} />
+            <FontAwesomeIcon className="icon" icon={faCalendarAlt} />
             {trip.date}
           </Date>
         )}
@@ -35,14 +38,14 @@ export default function Trip({ trips, deleteTrip, notes }) {
         <Location>USA</Location>
 
         <Link to={`/trip/${trip.id}/create-note`}>
-          <FontAwesomeIcon className="icon" icon={['fas', 'plus-circle']} />
+          <FontAwesomeIcon className="icon" icon={faPlusCircle} />
           Notiz hinzufügen
         </Link>
 
         <NoteList notes={notes} />
         <div className="center">
           <ButtonStyled onClick={handleDelete}>
-            <FontAwesomeIcon className="icon" icon={['far', 'trash-alt']} />
+            <FontAwesomeIcon className="icon" icon={faTrashAlt} />
           </ButtonStyled>
         </div>
       </WrapperStyled>

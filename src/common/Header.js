@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faSuitcase } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 
@@ -12,13 +14,13 @@ export default function Header() {
           exact
           path="/trip/:id"
           render={() => (
-            <FontAwesomeIcon className="icon" icon={['fas', 'chevron-left']} />
+            <FontAwesomeIcon className="icon" icon={faChevronLeft} />
           )}
         />
       </Link>
 
       <Link to="/">
-        <FontAwesomeIcon className="icon" icon={['fas', 'suitcase']} />
+        <FontAwesomeIcon className="icon" icon={faSuitcase} />
         My Trips
       </Link>
       <div> </div>

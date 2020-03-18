@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCommentDots } from '@fortawesome/free-regular-svg-icons'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 
@@ -14,7 +15,7 @@ export default function Note({ title, content }) {
   return (
     <NoteStyled onClick={showFulltext}>
       <EntryType>
-        <FontAwesomeIcon className="icon" icon={['far', 'comment-dots']} />
+        <FontAwesomeIcon className="icon" icon={faCommentDots} />
         Notiz
       </EntryType>
 

@@ -4,7 +4,6 @@ import styled from 'styled-components/macro'
 import CreateTrip from './components/pages/CreateTrip'
 import TripList from './components/pages/TripList'
 import TripsData from './data/tripsdata.json'
-import Icons from './common/Icons'
 import Header from './common/Header'
 import Trip from './components/pages/Trip'
 import Navigation from './common/Navigation'
@@ -17,11 +16,11 @@ function App() {
   const [notes, setNotes] = useState([
     {
       title: 'Sehenswürdigkeiten',
-      content: 'Wie erzeuge ich ein neues HTML-Element in JavaScript?',
+      content: 'Lorem ipsum ...',
     },
     {
       title: 'Hotels',
-      content: 'Wie erzeuge ich ',
+      content: 'Lorem ipsum ...',
     },
   ])
 
