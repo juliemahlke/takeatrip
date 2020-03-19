@@ -12,8 +12,8 @@ export default function ButtonAdd() {
 
 const ButtonStyled = styled.button`
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 50px;
+  left: 20px;
   width: 50px;
   height: 50px;
   border-radius: 50%;

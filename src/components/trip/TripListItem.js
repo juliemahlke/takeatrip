@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import defaultImg from '../../images/default-image.jpg'
 import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 TripListItem.propTypes = {
   trip: PropTypes.object,
@@ -14,7 +15,10 @@ export default function TripListItem({ trip }) {
         <img src={defaultImg} width="200" alt=""></img>
         <WrapperStyled>
           <h2>{trip.title}</h2>
-          <span>{trip.date}</span>
+          <div>
+            <FontAwesomeIcon className="icon" icon={['far', 'calendar-alt']} />
+            <span>{trip.date}</span>
+          </div>
         </WrapperStyled>
       </TripListItemStyled>
     </>
@@ -47,6 +51,11 @@ const TripListItemStyled = styled.section`
 
   span {
     max-height: 30px;
+  }
+
+  .icon {
+    color: #747474;
+    font-size: 16px;
   }
 
   img {

@@ -1,49 +1,69 @@
-import React, { useState } from 'react'
-import {
-  BrowserRouter as Router,
-  NavLink,
-  Route,
-  Switch,
-} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import ButtonAdd from './components/form/ButtonAdd'
 import CreateTrip from './components/pages/CreateTrip'
 import TripList from './components/pages/TripList'
 import TripsData from './data/tripsdata.json'
 import Icons from './common/Icons'
-import { tripsRef } from './firebase'
+import Header from './common/Header'
+import Trip from './components/pages/Trip'
+import Navigation from './common/Navigation'
+import { loadFromLocal, saveToLocal } from './common/utils'
 
 function App() {
   const tripsData = TripsData ? TripsData : []
-  const [trips, setTrips] = useState(tripsData)
-  const [toggle, setToggle] = useState(true)
+  const [trips, setTrips] = useState(loadFromLocal('trips') || TripsData)
+
+  useEffect(() => {
+    console.log(trips)
+    saveToLocal('trips', trips)
+  }, [trips])
 
   return (
     <Router>
-      <NavLink onClick={() => setToggle(!toggle)} to="/create">
-        <ButtonAdd />
-      </NavLink>
       <AppStyled>
-        <Switch>
-          <Route exact path="/">
-            <TripList trips={trips} />
-          </Route>
-          <Route path="/create">
-            <CreateTrip addTripData={createTrip()} />
-          </Route>
-        </Switch>
+        <Header />
+        <MainStyled>
+          <Switch>
+            <Route exact path="/">
+              <TripList trips={trips} />
+            </Route>
+            <Route path="/create">
+              <CreateTrip addTripData={addTrip} />
+            </Route>
+            <Route path="/trip/:id">
+              <Trip trips={trips} deleteTrip={deleteTrip} />
+            </Route>
+          </Switch>
+        </MainStyled>
+        <Navigation />
       </AppStyled>
     </Router>
   )
 
-  function createTrip() {
-    return trip => setTrips([trip, ...trips])
+  function addTrip(trip) {
+    const newTrips = [trip, ...trips]
+    setTrips(newTrips)
+  }
+
+  function deleteTrip(trip) {
+    const index = trips.indexOf(trip)
+    const newTrips = [...trips.slice(0, index), ...trips.slice(index + 1)]
+    setTrips(newTrips)
+    saveToLocal(newTrips)
   }
 }
 
 export default App
 
 const AppStyled = styled.div`
-  max-width: 768px;
+  display: grid;
+  grid-template-rows: 60px auto;
+  height: 100vh;
+  position: relative;
+`
+
+const MainStyled = styled.main`
+  overflow-y: scroll;
   position: relative;
 `

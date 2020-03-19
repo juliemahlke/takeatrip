@@ -6,7 +6,7 @@ import styled from 'styled-components'
 export default function ButtonCancel() {
   return (
     <LinkStyled to="/">
-      <FontAwesomeIcon icon={['fal', 'times-circle']} />
+      <FontAwesomeIcon icon={['far', 'times-circle']} />
     </LinkStyled>
   )
 }

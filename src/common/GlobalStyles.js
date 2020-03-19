@@ -7,12 +7,13 @@ export default createGlobalStyle`
 
   body {
     font-family: 'IBM Plex Sans';
+    font-stretch: normal;
     font-style: normal;
+    font-weight: normal;
     background: #F5F5F5;
     color: #333;
-    padding: 25px;
-    display:flex;
-    justify-content: center;
+    padding: 0; 
+    margin:0;
   }
 
   h1 {
@@ -28,5 +29,30 @@ export default createGlobalStyle`
 
   strong {
     font-weight:700;
+  }
+
+  a {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.44;
+    color: #5d7ca6;
+
+    &:hover{
+      text-decoration:underline;
+    }
+  }
+
+  .icon {
+    font-size: 18px;
+    font-weight: 300;
+    margin-right: 10px;
+  }
+
+  button {
+    cursor:pointer;
+  }
+
+  .center {
+    text-align:center;
   }
 `
