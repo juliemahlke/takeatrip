@@ -7,11 +7,11 @@ describe('Create a trip', () => {
     cy.get('form > button').click()
   })
 
-  it('visite homepage after creation', () => {
+  it('is redirected to the homepage after creation', () => {
     cy.url().should('eq', 'http://localhost:3000/')
   })
 
-  it('the new card is visible after creation', () => {
+  it('shows the new card', () => {
     cy.visit('http://localhost:3000/')
     cy.get('section > a > section > div > h2').contains('Barcelona')
     cy.get('section > a > section > div > div > span').contains(
@@ -19,7 +19,7 @@ describe('Create a trip', () => {
     )
   })
 
-  it('the new card is visible after reload', () => {
+  it('shows the card after reload', () => {
     cy.visit('http://localhost:3000/')
     cy.get('section > a > section > div > h2').contains('Barcelona')
     cy.get('section > a > section > div > div > span').contains(
