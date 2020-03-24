@@ -1,24 +1,27 @@
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import defaultImg from '../../images/default-image.jpg'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons'
 import NoteList from '../trip/NoteList'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
+import NoteEditor from '../trip/NoteEditor'
+import { loadFromLocal, saveToLocal } from '../../common/utils'
 
 Trip.propTypes = {
   trips: PropTypes.array,
   deleteTrip: PropTypes.func,
 }
 
-export default function Trip({ trips, deleteTrip, notes }) {
+export default function Trip({ trips, deleteTrip, setTrips }) {
   const params = useParams()
   const history = useHistory()
   const trip = trips.find(trip => trip.id === params.id)
+  const notes = trip.notes || []
 
   useEffect(() => {
     document.title = 'Trip | ' + trip.title
@@ -37,6 +40,7 @@ export default function Trip({ trips, deleteTrip, notes }) {
         <h1>{trip.title}</h1>
         <Location>USA</Location>
 
+        <NoteEditor addNote={addNote} />
         <Link to={`/trip/${trip.id}/create-note`}>
           <FontAwesomeIcon className="icon" icon={faPlusCircle} />
           Notiz hinzufügen
@@ -55,6 +59,12 @@ export default function Trip({ trips, deleteTrip, notes }) {
   function handleDelete() {
     deleteTrip(trip)
     history.push('/')
+  }
+
+  function addNote(note) {
+    const newNotes = [note, ...notes]
+    trip.notes = newNotes
+    setTrips([...trips])
   }
 }
 

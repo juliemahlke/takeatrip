@@ -6,7 +6,12 @@ export default function NoteList({ notes }) {
   return (
     <>
       {notes.map(note => (
-        <Note title={note.title} content={note.content} key={uuidv4()} />
+        <Note
+          title={note.title}
+          content={note.content}
+          id={note.id}
+          key={uuidv4()}
+        />
       ))}
     </>
   )

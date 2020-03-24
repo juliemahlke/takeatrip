@@ -5,11 +5,12 @@ import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 
 Note.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   content: PropTypes.string,
+  id: PropTypes.string,
 }
 
-export default function Note({ title, content }) {
+export default function Note({ title, content, id }) {
   const [fulltextVisible, setFulltextVisible] = useState(false)
 
   return (
@@ -20,6 +21,7 @@ export default function Note({ title, content }) {
       </EntryType>
 
       <h2>{title}</h2>
+      <p>{id}</p>
       {content && (
         <p className={fulltextVisible ? 'fulltext' : ''}>{content}</p>
       )}

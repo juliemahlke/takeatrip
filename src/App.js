@@ -8,21 +8,10 @@ import Header from './common/Header'
 import Trip from './components/pages/Trip'
 import Navigation from './common/Navigation'
 import { loadFromLocal, saveToLocal } from './common/utils'
-import NoteEditor from './components/trip/NoteEditor'
 
 function App() {
   const tripsData = TripsData ? TripsData : []
   const [trips, setTrips] = useState(loadFromLocal('trips') || tripsData)
-  const [notes, setNotes] = useState([
-    {
-      title: 'Sehenswürdigkeiten',
-      content: 'Lorem ipsum ...',
-    },
-    {
-      title: 'Hotels',
-      content: 'Lorem ipsum ...',
-    },
-  ])
 
   useEffect(() => {
     saveToLocal('trips', trips)
@@ -41,10 +30,7 @@ function App() {
               <CreateTrip addTripData={addTrip} />
             </Route>
             <Route path="/trip/:id">
-              <Trip trips={trips} deleteTrip={deleteTrip} notes={notes} />
-            </Route>
-            <Route path="/trip/:id/create-note">
-              <NoteEditor addNoteData={addNote} />
+              <Trip trips={trips} deleteTrip={deleteTrip} setTrips={setTrips} />
             </Route>
           </Switch>
         </MainStyled>
@@ -63,11 +49,6 @@ function App() {
     const newTrips = [...trips.slice(0, index), ...trips.slice(index + 1)]
     setTrips(newTrips)
     saveToLocal(newTrips)
-  }
-
-  function addNote(note) {
-    const newNotes = [note, ...notes]
-    setNotes(newNotes)
   }
 }
 
