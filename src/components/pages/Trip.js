@@ -8,7 +8,7 @@ import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons'
 import NoteList from '../trip/NoteList'
-import { useHistory, Link } from 'react-router-dom'
+import { useHistory, Link, Route, Switch } from 'react-router-dom'
 import NoteEditor from '../trip/NoteEditor'
 
 Trip.propTypes = {
@@ -16,7 +16,7 @@ Trip.propTypes = {
   deleteTrip: PropTypes.func,
 }
 
-export default function Trip({ trips, deleteTrip, setTrips }) {
+export default function Trip({ trips, deleteTrip }) {
   const params = useParams()
   const history = useHistory()
   const trip = trips.find(trip => trip.id === params.id)
@@ -42,9 +42,9 @@ export default function Trip({ trips, deleteTrip, setTrips }) {
           <FontAwesomeIcon className="icon" icon={faPlusCircle} />
           Notiz hinzufügen
         </Link>
-        <NoteEditor addNote={addNote} />
 
         <NoteList notes={notes} />
+
         <div className="center">
           <ButtonStyled onClick={handleDelete}>
             <FontAwesomeIcon className="icon" icon={faTrashAlt} />
@@ -57,12 +57,6 @@ export default function Trip({ trips, deleteTrip, setTrips }) {
   function handleDelete() {
     deleteTrip(trip)
     history.push('/')
-  }
-
-  function addNote(note) {
-    const newNotes = [note, ...notes]
-    trip.notes = newNotes
-    setTrips([...trips])
   }
 }
 
