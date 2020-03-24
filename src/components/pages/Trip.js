@@ -10,7 +10,6 @@ import { faTrashAlt } from '@fortawesome/free-regular-svg-icons'
 import NoteList from '../trip/NoteList'
 import { useHistory, Link } from 'react-router-dom'
 import NoteEditor from '../trip/NoteEditor'
-import { loadFromLocal, saveToLocal } from '../../common/utils'
 
 Trip.propTypes = {
   trips: PropTypes.array,
@@ -39,12 +38,11 @@ export default function Trip({ trips, deleteTrip, setTrips }) {
         )}
         <h1>{trip.title}</h1>
         <Location>USA</Location>
-
-        <NoteEditor addNote={addNote} />
         <Link to={`/trip/${trip.id}/create-note`}>
           <FontAwesomeIcon className="icon" icon={faPlusCircle} />
           Notiz hinzufügen
         </Link>
+        <NoteEditor addNote={addNote} />
 
         <NoteList notes={notes} />
         <div className="center">

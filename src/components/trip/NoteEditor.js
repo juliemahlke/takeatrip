@@ -3,25 +3,25 @@ import { Editor } from '@tinymce/tinymce-react'
 import InputText from '../form/InputText'
 // import { useHistory } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
+import styled from 'styled-components/macro'
 
 export default function NoteEditor({ addNote }) {
   const uniqueId = uuidv4()
-  const [EditorContent, setEditorContent] = useState('hello')
-
+  const [editorContent, setEditorContent] = useState('')
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <InputText
           type="text"
           name="title"
-          placeholder="Titel des Trips"
+          placeholder="Titel der Notiz"
           isRequired={true}
         ></InputText>
         <Editor
           apiKey="89f8yntgojuxvga9sjy857nlku4ued8avgqfj03g0nlra5x2"
           textareaName="content"
-          onEditorChange={handleChange}
-          value={EditorContent}
+          onEditorChange={handleEditorChange}
+          value={editorContent}
           init={{
             hidden_input: false,
             selector: 'textarea',
@@ -37,23 +37,27 @@ export default function NoteEditor({ addNote }) {
           }}
         />
         <button>save</button>
-      </form>
+      </Form>
     </>
   )
 
-  function handleChange(event) {
-    setEditorContent(event)
-    console.log(EditorContent)
+  function handleEditorChange(editorContent) {
+    setEditorContent(editorContent)
   }
 
   function handleSubmit(event) {
-    const content = event.target.content
+    const form = event.target
     const title = event.target.title
     event.preventDefault()
     addNote({
       title: title.value,
-      content: content.value,
+      content: editorContent,
       id: uniqueId,
     })
+    form.reset()
   }
 }
+
+const Form = styled.form`
+  margin-bottom: 30px;
+`
