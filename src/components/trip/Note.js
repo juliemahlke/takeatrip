@@ -23,9 +23,9 @@ export default function Note({ title, content }) {
 
       <h2>{title}</h2>
       {content && (
-        <p className={fulltextVisible ? 'fulltext' : ''}>
+        <div className={fulltextVisible ? 'fulltext' : ''}>
           {ReactHtmlParser(content)}
-        </p>
+        </div>
       )}
     </NoteStyled>
   )
