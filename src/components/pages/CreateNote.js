@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 import ButtonPrimary from '../form/Button'
 import InputText from '../form/InputText'
 import TextEditor from '../form/TextEditor'
+import styled from 'styled-components/macro'
 
 CreateNote.propTypes = {
   setTrips: PropTypes.func,
@@ -20,22 +21,27 @@ export default function CreateNote({ setTrips, trips }) {
   const history = useHistory()
 
   return (
-    <form onSubmit={handleSubmit}>
-      <InputText
-        type="text"
-        name="title"
-        placeholder="Titel der Notiz"
-        isRequired={true}
-      ></InputText>
-      <TextEditor
-        value={editorContent}
-        handleEditorChange={handleEditorChange}
-      />
-      <ButtonPrimary
-        label={'Notiz speichern'}
-        content="Notiz speichern"
-      ></ButtonPrimary>
-    </form>
+    <WrapperStyled>
+      <h1>Neue Notiz</h1>
+      <Form onSubmit={handleSubmit}>
+        <InputText
+          type="text"
+          name="title"
+          placeholder="Titel eingeben ..."
+          isRequired={true}
+        ></InputText>
+        <TextEditor
+          value={editorContent}
+          handleEditorChange={handleEditorChange}
+        />
+        <div className="center">
+          <ButtonPrimary
+            label={'Notiz speichern'}
+            content="Notiz speichern"
+          ></ButtonPrimary>
+        </div>
+      </Form>
+    </WrapperStyled>
   )
 
   function handleEditorChange(editorContent) {
@@ -61,3 +67,31 @@ export default function CreateNote({ setTrips, trips }) {
     setTrips([...trips])
   }
 }
+
+const WrapperStyled = styled.div`
+  padding: 25px;
+  position: relative;
+
+  h1 {
+    font-size: 18px;
+    font-family: 'IBM Plex Sans';
+    font-weight: 300;
+    margin: 0 0 15px 0;
+  }
+`
+
+const Form = styled.form`
+  input {
+    border: 0;
+    width: 100%;
+    border-bottom: 1px solid #cecece;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-weight: 600;
+  }
+
+  button {
+    bottom: 20px;
+    margin: 0 auto;
+  }
+`

@@ -35,12 +35,14 @@ const InputStyled = styled.input`
   border: solid 2px #cecece;
   background-color: #ffffff;
   padding: 10px;
+  font-family: 'IBM Plex Sans';
   font-size: 18px;
   line-height: 1.28;
   letter-spacing: 0.36px;
   text-align: left;
   background-color: ${props => props.backgroundColor};
   margin-bottom: 30px;
+  color: #505050;
 
   ::placeholder {
     color: #a5a5a5;

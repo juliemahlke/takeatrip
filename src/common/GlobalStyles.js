@@ -10,8 +10,8 @@ export default createGlobalStyle`
     font-stretch: normal;
     font-style: normal;
     font-weight: normal;
-    background: #F5F5F5;
-    color: #333;
+    background: #FFF;
+    color: #505050;
     padding: 0; 
     margin:0;
   }
