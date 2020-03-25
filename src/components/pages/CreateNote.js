@@ -69,14 +69,12 @@ export default function CreateNote({ setTrips, trips }) {
 }
 
 const WrapperStyled = styled.div`
-  padding: 25px;
   position: relative;
 
   h1 {
     font-size: 18px;
     font-family: 'IBM Plex Sans';
     font-weight: 300;
-    margin: 0 0 15px 0;
   }
 `
 

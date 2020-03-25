@@ -30,10 +30,6 @@ export default function TextEditor({ handleEditorChange, editorContent }) {
           toolbar: 'bold italic | bullist numlist | copy paste',
           paste_as_text: true,
           statusbar: false,
-          mobile: {
-            menubar: true,
-            theme: 'mobile',
-          },
         }}
       />
     </EditorStyled>
@@ -43,5 +39,9 @@ export default function TextEditor({ handleEditorChange, editorContent }) {
 const EditorStyled = styled.div`
   .tox-tinymce {
     border: 0;
+  }
+
+  .mce-content-body {
+    margin: 0 !important;
   }
 `
