@@ -3,29 +3,34 @@ import styled from 'styled-components/macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { faSuitcase } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
-import { Route } from 'react-router-dom'
+import { Link, Route, useHistory } from 'react-router-dom'
 
 export default function Header() {
+  let history = useHistory()
+
   return (
     <HeaderStyled>
-      <Link className="backlink" to="/">
+      <BackButton onClick={handleClick}>
         <Route
           exact
-          path="/trip/:id"
+          path={['/trip/:id', '/trip/:id/create-note']}
           render={() => (
             <FontAwesomeIcon className="icon" icon={faChevronLeft} />
           )}
         />
-      </Link>
+      </BackButton>
 
       <Link to="/">
         <FontAwesomeIcon className="icon" icon={faSuitcase} />
         My Trips
       </Link>
-      <div> </div>
+      <div></div>
     </HeaderStyled>
   )
+
+  function handleClick() {
+    history.goBack()
+  }
 }
 
 const HeaderStyled = styled.header`
@@ -47,14 +52,17 @@ const HeaderStyled = styled.header`
     font-family: 'Fredoka One';
   }
 
-  .backlink {
-    color: #3e5a80;
-    width: 20px;
-    margin-right: 0;
-  }
-
   .icon {
     color: #5d7ca6;
     font-size: 20px;
   }
+`
+
+const BackButton = styled.button`
+  border: 0;
+  padding: 0;
+  background: none;
+  color: #3e5a80;
+  width: 20px;
+  margin-right: 0;
 `

@@ -8,8 +8,7 @@ import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons'
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import { faTrashAlt } from '@fortawesome/free-regular-svg-icons'
 import NoteList from '../trip/NoteList'
-import { useHistory, Link, Route, Switch } from 'react-router-dom'
-import NoteEditor from '../trip/NoteEditor'
+import { useHistory, Link } from 'react-router-dom'
 
 Trip.propTypes = {
   trips: PropTypes.array,
