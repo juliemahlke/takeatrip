@@ -1,12 +1,13 @@
 import React from 'react'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimesCircle } from '@fortawesome/free-regular-svg-icons'
 import styled from 'styled-components'
 
 export default function ButtonCancel() {
   return (
     <LinkStyled to="/">
-      <FontAwesomeIcon icon={['far', 'times-circle']} />
+      <FontAwesomeIcon icon={faTimesCircle} />
     </LinkStyled>
   )
 }

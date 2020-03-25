@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 import defaultImg from '../../images/default-image.jpg'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons'
 
 TripListItem.propTypes = {
   trip: PropTypes.object,
@@ -16,7 +17,7 @@ export default function TripListItem({ trip }) {
         <WrapperStyled>
           <h2>{trip.title}</h2>
           <div>
-            <FontAwesomeIcon className="icon" icon={['far', 'calendar-alt']} />
+            <FontAwesomeIcon className="icon" icon={faCalendarAlt} />
             <span>{trip.date}</span>
           </div>
         </WrapperStyled>

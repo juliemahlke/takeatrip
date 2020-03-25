@@ -13,8 +13,8 @@ Button.propTypes = {
 
 export default function CreateTrip({ addTripData }) {
   const [disabled, setDisabled] = useState(true)
-  const history = useHistory()
   const uniqueId = uuidv4()
+  const history = useHistory()
 
   return (
     <FormStyled onSubmit={handleSubmit}>

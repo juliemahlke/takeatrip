@@ -4,8 +4,11 @@ import defaultImg from '../../images/default-image.jpg'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons'
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt } from '@fortawesome/free-regular-svg-icons'
 import NoteList from '../trip/NoteList'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 Trip.propTypes = {
   trips: PropTypes.array,
@@ -16,6 +19,7 @@ export default function Trip({ trips, deleteTrip }) {
   const params = useParams()
   const history = useHistory()
   const trip = trips.find(trip => trip.id === params.id)
+  const notes = trip.notes || []
 
   useEffect(() => {
     document.title = 'Trip | ' + trip.title
@@ -27,20 +31,22 @@ export default function Trip({ trips, deleteTrip }) {
       <WrapperStyled>
         {trip.date && (
           <Date>
-            <FontAwesomeIcon className="icon" icon={['far', 'calendar-alt']} />
+            <FontAwesomeIcon className="icon" icon={faCalendarAlt} />
             {trip.date}
           </Date>
         )}
         <h1>{trip.title}</h1>
         <Location>USA</Location>
-        <LinkStyled href="https://www.google.de">
-          <FontAwesomeIcon className="icon" icon={['fas', 'plus-circle']} />
+        <Link to={`/trip/${trip.id}/create-note`}>
+          <FontAwesomeIcon className="icon" icon={faPlusCircle} />
           Notiz hinzufügen
-        </LinkStyled>
-        <NoteList />
+        </Link>
+
+        <NoteList notes={notes} />
+
         <div className="center">
           <ButtonStyled onClick={handleDelete}>
-            <FontAwesomeIcon className="icon" icon={['far', 'trash-alt']} />
+            <FontAwesomeIcon className="icon" icon={faTrashAlt} />
           </ButtonStyled>
         </div>
       </WrapperStyled>
@@ -99,12 +105,6 @@ const Location = styled.div`
   line-height: 1.28;
   color: #747474;
   margin-bottom: 20px;
-`
-
-const LinkStyled = styled.a`
-  margin-bottom: 40px;
-  display: block;
-  font-weight: 400;
 `
 
 const ButtonStyled = styled.button`

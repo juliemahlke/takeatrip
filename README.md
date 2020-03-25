@@ -1,6 +1,7 @@
 # Trip App
 
 This React-App helps you to organize and plan your trips in the future.
+Open [julies-trips.web.app](https://julies-trips.web.app/) to view it.
 
 ## Quickstart
 

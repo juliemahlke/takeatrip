@@ -1,11 +1,12 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
 
 export default function ButtonAdd() {
   return (
     <ButtonStyled>
-      <FontAwesomeIcon icon={['fas', 'plus']} />
+      <FontAwesomeIcon icon={faPlus} />
     </ButtonStyled>
   )
 }

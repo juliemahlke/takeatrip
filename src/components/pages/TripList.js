@@ -22,6 +22,7 @@ export default function TripList({ trips }) {
 
 const TripListStyled = styled.section`
   padding: 25px;
+  background: #f5f5f5;
 
   a,
   a:hover {
