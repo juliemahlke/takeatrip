@@ -23,9 +23,9 @@ export default function Note({ title, content }) {
 
       <h2>{title}</h2>
       {content && (
-        <div className={fulltextVisible ? 'fulltext' : ''}>
+        <NoteContent className={fulltextVisible ? 'fulltext' : ''}>
           {ReactHtmlParser(content)}
-        </div>
+        </NoteContent>
       )}
     </NoteStyled>
   )
@@ -63,16 +63,16 @@ const NoteStyled = styled.section`
     color: #505050;
     margin-bottom: 5px;
   }
+`
 
-  p {
-    line-height: 1.38;
-    margin-bottom: 0;
-    margin-top: 0;
-    display: none;
+const NoteContent = styled.div`
+  line-height: 1.38;
+  margin-bottom: 0;
+  margin-top: 0;
+  display: none;
 
-    &.fulltext {
-      display: block;
-    }
+  &.fulltext {
+    display: block;
   }
 `
 
