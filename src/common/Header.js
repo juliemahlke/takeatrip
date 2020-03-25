@@ -6,7 +6,7 @@ import { faSuitcase } from '@fortawesome/free-solid-svg-icons'
 import { Link, Route, useHistory } from 'react-router-dom'
 
 export default function Header() {
-  let history = useHistory()
+  const history = useHistory()
 
   return (
     <HeaderStyled>

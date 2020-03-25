@@ -13,7 +13,6 @@ CreateNote.propTypes = {
 }
 
 export default function CreateNote({ setTrips, trips }) {
-  const uniqueId = uuidv4()
   const [editorContent, setEditorContent] = useState('')
   const params = useParams()
   const trip = trips.find(trip => trip.id === params.id)
@@ -55,7 +54,6 @@ export default function CreateNote({ setTrips, trips }) {
     addNote({
       title: title.value,
       content: editorContent,
-      id: uniqueId,
     })
     form.reset()
     history.push(`/trip/${trip.id}`)

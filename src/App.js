@@ -11,7 +11,7 @@ import CreateNote from './components/pages/CreateNote'
 import TripsData from './data/tripsdata.json'
 
 function App() {
-  const tripsData = TripsData ? TripsData : []
+  const tripsData = TripsData || []
   const [trips, setTrips] = useState(loadFromLocal('trips') || tripsData)
 
   useEffect(() => {

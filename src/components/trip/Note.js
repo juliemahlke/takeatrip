@@ -8,7 +8,6 @@ import ReactHtmlParser from 'react-html-parser'
 Note.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
-  id: PropTypes.string,
 }
 
 export default function Note({ title, content }) {
