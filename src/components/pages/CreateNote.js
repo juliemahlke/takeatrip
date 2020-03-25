@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import { Editor } from '@tinymce/tinymce-react'
-import InputText from '../form/InputText'
-import { useHistory } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
-import { v4 as uuidv4 } from 'uuid'
 import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { useHistory, useParams } from 'react-router-dom'
+import { v4 as uuidv4 } from 'uuid'
+import ButtonPrimary from '../form/Button'
+import InputText from '../form/InputText'
+import TextEditor from '../form/TextEditor'
 
-NoteEditor.propTypes = {
+CreateNote.propTypes = {
   setTrips: PropTypes.func,
   trips: PropTypes.array,
 }
 
-export default function NoteEditor({ setTrips, trips }) {
+export default function CreateNote({ setTrips, trips }) {
   const uniqueId = uuidv4()
   const [editorContent, setEditorContent] = useState('')
   const params = useParams()
@@ -27,27 +27,14 @@ export default function NoteEditor({ setTrips, trips }) {
         placeholder="Titel der Notiz"
         isRequired={true}
       ></InputText>
-      <Editor
-        apiKey="89f8yntgojuxvga9sjy857nlku4ued8avgqfj03g0nlra5x2"
-        textareaName="content"
-        onEditorChange={handleEditorChange}
+      <TextEditor
         value={editorContent}
-        init={{
-          hidden_input: false,
-          selector: 'textarea',
-          forced_root_block: '',
-          height: '',
-          menubar: false,
-          plugins: [
-            'advlist autolink lists link image charmap print preview anchor',
-            'searchreplace visualblocks code fullscreen',
-            'insertdatetime media table paste code help wordcount save',
-          ],
-          toolbar: 'bold italic | bullist numlist link | paste',
-          paste_as_text: true,
-        }}
+        handleEditorChange={handleEditorChange}
       />
-      <button>save</button>
+      <ButtonPrimary
+        label={'Notiz speichern'}
+        content="Notiz speichern"
+      ></ButtonPrimary>
     </form>
   )
 
