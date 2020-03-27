@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
+import Footer from './common/Footer'
 import Header from './common/Header'
-import Navigation from './common/Navigation'
 import { loadFromLocal, saveToLocal } from './common/utils'
+import CreateNote from './components/pages/CreateNote'
 import CreateTrip from './components/pages/CreateTrip'
 import Trip from './components/pages/Trip'
 import TripList from './components/pages/TripList'
-import CreateNote from './components/pages/CreateNote'
 import TripsData from './data/tripsdata.json'
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
             </Route>
           </Switch>
         </MainStyled>
-        <Navigation />
+        <Footer />
       </AppStyled>
     </Router>
   )
@@ -62,10 +62,8 @@ const AppStyled = styled.div`
   display: grid;
   grid-template-rows: 60px auto;
   height: 100vh;
-  position: relative;
 `
 
 const MainStyled = styled.main`
   overflow-y: scroll;
-  position: relative;
 `
