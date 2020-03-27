@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
-import { v4 as uuidv4 } from 'uuid'
 import ButtonPrimary from '../form/Button'
 import InputText from '../form/InputText'
 import TextEditor from '../form/TextEditor'
