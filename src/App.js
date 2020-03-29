@@ -9,6 +9,7 @@ import CreateTrip from './components/pages/CreateTrip'
 import Trip from './components/pages/Trip'
 import HomePage from './components/pages/HomePage'
 import TripsData from './data/tripsdata.json'
+import BookmarkPage from './components/pages/BookmarkPage'
 
 function App() {
   const tripsData = TripsData || []
@@ -26,6 +27,12 @@ function App() {
           <Switch>
             <Route exact path="/">
               <HomePage trips={trips} onBookmarkClick={handleBookmarkClick} />
+            </Route>
+            <Route path="/bookmarks">
+              <BookmarkPage
+                trips={trips}
+                onBookmarkClick={handleBookmarkClick}
+              />
             </Route>
             <Route path="/create">
               <CreateTrip addTripData={addTrip} />

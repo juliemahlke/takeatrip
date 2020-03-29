@@ -10,13 +10,13 @@ export default function Footer() {
   return (
     <FooterStyled>
       <NavigationStyled>
-        <LinkStyled to="">
+        <LinkStyled exact to="">
           <FontAwesomeIcon icon={faList} />
         </LinkStyled>
         <LinkStyled to="/create">
           <ButtonAdd />
         </LinkStyled>
-        <LinkStyled to="/create-note">
+        <LinkStyled to="/bookmarks">
           <FontAwesomeIcon icon={faBookmark} />
         </LinkStyled>
       </NavigationStyled>
