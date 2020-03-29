@@ -1,18 +1,28 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
+import PropTypes from 'prop-types'
 
-export default function Bookmark({ onBookmarkClick, trip, bookmarkStatus }) {
+Bookmark.propTypes = {
+  trip: PropTypes.object.isRequired,
+  onBookmarkClick: PropTypes.func.isRequired,
+}
+
+export default function Bookmark({ onBookmarkClick, trip }) {
   return (
-    <StyledBookmark onClick={handleBookmarkClick} active={bookmarkStatus}>
+    <StyledBookmark
+      onClick={handleBookmarkClick}
+      active={trip.isBookmarked}
+      aria-label={trip.isBookmarked ? 'Remove bookmark' : 'Add bookmark'}
+    >
       <BookmarkIcon className="bookmark" icon={faBookmark} />
     </StyledBookmark>
   )
 
   function handleBookmarkClick(event) {
     event.stopPropagation()
-    onBookmarkClick(trip)
+    onBookmarkClick()
   }
 }
 
