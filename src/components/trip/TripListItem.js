@@ -4,26 +4,40 @@ import defaultImg from '../../images/default-image.jpg'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
 TripListItem.propTypes = {
   trip: PropTypes.object,
+  isBookmarked: PropTypes.bool,
 }
 
-export default function TripListItem({ trip }) {
+export default function TripListItem({ trip, isBookmarked, onBookmarkClick }) {
   return (
-    <>
-      <TripListItemStyled>
-        <img src={defaultImg} width="200" alt=""></img>
-        <WrapperStyled>
-          <h2>{trip.title}</h2>
-          <div>
-            <FontAwesomeIcon className="icon" icon={faCalendarAlt} />
-            <span>{trip.date}</span>
-          </div>
-        </WrapperStyled>
-      </TripListItemStyled>
-    </>
+    <TripListItemStyled>
+      <StyledBookmark
+        onClick={handleBookmarkClick}
+        active={isBookmarked}
+        aria-label={isBookmarked ? 'Remove bookmark' : 'Add bookmark'}
+      >
+        <BookmarkIcon className="bookmark" icon={faBookmark} />
+      </StyledBookmark>
+
+      <img src={defaultImg} width="200" alt=""></img>
+      <WrapperStyled>
+        <h2>{trip.title}</h2>
+        <div>
+          <FontAwesomeIcon className="icon" icon={faCalendarAlt} />
+          <span>{trip.date}</span>
+        </div>
+      </WrapperStyled>
+    </TripListItemStyled>
   )
+
+  function handleBookmarkClick(event) {
+    event.stopPropagation()
+    onBookmarkClick && onBookmarkClick()
+    console.log(trip)
+  }
 }
 
 const TripListItemStyled = styled.section`
@@ -37,7 +51,7 @@ const TripListItemStyled = styled.section`
   line-height: 1.29;
   color: #747474;
   height: 100px;
-  overflow: hidden;
+  position: relative;
 
   h2 {
     font-size: 18px;
@@ -72,3 +86,17 @@ const WrapperStyled = styled.div`
   gap: 10px;
   width: 70%;
 `
+
+const StyledBookmark = styled.button`
+  position: absolute;
+  right: 20px;
+  top: -8px;
+  font-size: 22px;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  z-index: 100;
+  color: ${props => (props.active ? 'hotpink' : 'lightgray')};
+`
+
+const BookmarkIcon = styled(FontAwesomeIcon)``

@@ -7,7 +7,7 @@ import { loadFromLocal, saveToLocal } from './common/utils'
 import CreateNote from './components/pages/CreateNote'
 import CreateTrip from './components/pages/CreateTrip'
 import Trip from './components/pages/Trip'
-import TripList from './components/pages/TripList'
+import HomePage from './components/pages/HomePage'
 import TripsData from './data/tripsdata.json'
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
         <MainStyled>
           <Switch>
             <Route exact path="/">
-              <TripList trips={trips} />
+              <HomePage trips={trips} onBookmarkClick={handleBookmarkClick} />
             </Route>
             <Route path="/create">
               <CreateTrip addTripData={addTrip} />
@@ -53,6 +53,15 @@ function App() {
     const newTrips = [...trips.slice(0, index), ...trips.slice(index + 1)]
     setTrips(newTrips)
     saveToLocal(newTrips)
+  }
+
+  function handleBookmarkClick(trip) {
+    const index = trips.indexOf(trip)
+    const updatedTrip = {
+      ...trips[index],
+      isBookmarked: !trips[index].isBookmarked,
+    }
+    setTrips([...trips.slice(0, index), updatedTrip, ...trips.slice(index + 1)])
   }
 }
 
