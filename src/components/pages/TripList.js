@@ -11,13 +11,13 @@ export default function TripList({ trips, onBookmarkClick }) {
   return (
     <>
       {trips.map(trip => (
-        // <Link to={`/trip/${trip.id}`} key={trip.id}>
-        <TripListItem
-          trip={trip}
-          onBookmarkClick={() => onBookmarkClick(trip)}
-          key={trip.id}
-        />
-        // </Link>
+        <Link to={`/trip/${trip.id}`} key={trip.id}>
+          <TripListItem
+            trip={trip}
+            onBookmarkClick={() => onBookmarkClick(trip)}
+            key={trip.id}
+          />
+        </Link>
       ))}
     </>
   )

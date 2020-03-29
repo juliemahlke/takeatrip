@@ -8,16 +8,16 @@ import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
 TripListItem.propTypes = {
   trip: PropTypes.object,
-  isBookmarked: PropTypes.bool,
+  onBookmarkClick: PropTypes.func.isRequired,
 }
 
-export default function TripListItem({ trip, isBookmarked, onBookmarkClick }) {
+export default function TripListItem({ trip, onBookmarkClick }) {
   return (
     <TripListItemStyled>
       <StyledBookmark
         onClick={handleBookmarkClick}
-        active={isBookmarked}
-        aria-label={isBookmarked ? 'Remove bookmark' : 'Add bookmark'}
+        active={trip.isBookmarked}
+        aria-label={trip.isBookmarked ? 'Remove bookmark' : 'Add bookmark'}
       >
         <BookmarkIcon className="bookmark" icon={faBookmark} />
       </StyledBookmark>
@@ -35,8 +35,7 @@ export default function TripListItem({ trip, isBookmarked, onBookmarkClick }) {
 
   function handleBookmarkClick(event) {
     event.stopPropagation()
-    onBookmarkClick && onBookmarkClick()
-    console.log(trip)
+    onBookmarkClick()
   }
 }
 
@@ -96,7 +95,7 @@ const StyledBookmark = styled.button`
   border: 0;
   margin: 0;
   z-index: 100;
-  color: ${props => (props.active ? 'hotpink' : 'lightgray')};
+  color: ${props => (props.active ? '#F85A8E' : '#e5e5e5')};
 `
 
 const BookmarkIcon = styled(FontAwesomeIcon)``
