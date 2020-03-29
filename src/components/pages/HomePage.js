@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import TripList from './TripList'
+import TripList from '../trip/TripList'
 import styled from 'styled-components/macro'
+
+HomePage.propTypes = {
+  trips: PropTypes.array.isRequired,
+  onBookmarkClick: PropTypes.func.isRequired,
+}
 
 export default function HomePage({ trips, onBookmarkClick }) {
   return (
