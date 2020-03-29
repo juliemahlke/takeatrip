@@ -21,8 +21,8 @@ export default function Header() {
       </BackButton>
 
       <Link to="/">
-        <FontAwesomeIcon className="icon" icon={faSuitcase} />
-        My Trips
+        <FontAwesomeIcon className="icon logo" icon={faSuitcase} />
+        take<span>a</span>trip
       </Link>
       <div></div>
     </HeaderStyled>
@@ -55,6 +55,12 @@ const HeaderStyled = styled.header`
   .icon {
     color: #5d7ca6;
     font-size: 20px;
+  }
+
+  .logo,
+  span {
+    color: #9cacc1;
+    margin: 0 3px;
   }
 `
 

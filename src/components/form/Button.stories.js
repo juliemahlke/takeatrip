@@ -3,6 +3,8 @@ import { action } from '@storybook/addon-actions'
 import ButtonPrimary from './Button'
 import ButtonAdd from './ButtonAdd'
 import { withKnobs, text, boolean } from '@storybook/addon-knobs'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   title: 'Form/Buttons',
@@ -31,4 +33,10 @@ export const buttonDisabled = () => (
   ></ButtonPrimary>
 )
 
-export const buttonIcon = () => <ButtonAdd onClick={action('send')}></ButtonAdd>
+export const buttonIcon = () => (
+  <ButtonAdd onClick={action('send')}>
+    <FontAwesomeIcon icon={faPlus} />
+  </ButtonAdd>
+)
+
+const Icon = styled(FontAwesomeIcon)``

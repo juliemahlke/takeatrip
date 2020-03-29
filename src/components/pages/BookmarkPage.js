@@ -20,6 +20,7 @@ export default function BookmarkPage({ trips, onBookmarkClick }) {
 const HomePageStyled = styled.section`
   padding: 25px;
   background: #f5f5f5;
+  height: 100vh;
 
   a,
   a:hover {
