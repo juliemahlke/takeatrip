@@ -78,6 +78,7 @@ const AppStyled = styled.div`
   display: grid;
   grid-template-rows: 60px auto;
   height: 100vh;
+  padding-bottom: 30px;
 `
 
 const MainStyled = styled.main`

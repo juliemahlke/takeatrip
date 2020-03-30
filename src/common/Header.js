@@ -55,12 +55,13 @@ const HeaderStyled = styled.header`
   .icon {
     color: #5d7ca6;
     font-size: 20px;
+    margin-right: 6px;
+    color: #9cacc1;
   }
 
-  .logo,
   span {
     color: #9cacc1;
-    margin: 0 3px;
+    margin: 0 2px;
   }
 `
 
