@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
+import Footer from './common/Footer'
 import Header from './common/Header'
-import Navigation from './common/Navigation'
 import { loadFromLocal, saveToLocal } from './common/utils'
+import CreateNote from './components/pages/CreateNote'
 import CreateTrip from './components/pages/CreateTrip'
 import Trip from './components/pages/Trip'
-import TripList from './components/pages/TripList'
-import CreateNote from './components/pages/CreateNote'
+import HomePage from './components/pages/HomePage'
 import TripsData from './data/tripsdata.json'
+import BookmarkPage from './components/pages/BookmarkPage'
 
 function App() {
   const tripsData = TripsData || []
@@ -25,7 +26,13 @@ function App() {
         <MainStyled>
           <Switch>
             <Route exact path="/">
-              <TripList trips={trips} />
+              <HomePage trips={trips} onBookmarkClick={handleBookmarkClick} />
+            </Route>
+            <Route path="/bookmarks">
+              <BookmarkPage
+                trips={trips}
+                onBookmarkClick={handleBookmarkClick}
+              />
             </Route>
             <Route path="/create">
               <CreateTrip addTripData={addTrip} />
@@ -38,7 +45,7 @@ function App() {
             </Route>
           </Switch>
         </MainStyled>
-        <Navigation />
+        <Footer />
       </AppStyled>
     </Router>
   )
@@ -54,6 +61,15 @@ function App() {
     setTrips(newTrips)
     saveToLocal(newTrips)
   }
+
+  function handleBookmarkClick(trip) {
+    const index = trips.indexOf(trip)
+    const updatedTrip = {
+      ...trips[index],
+      isBookmarked: !trips[index].isBookmarked,
+    }
+    setTrips([...trips.slice(0, index), updatedTrip, ...trips.slice(index + 1)])
+  }
 }
 
 export default App
@@ -62,10 +78,9 @@ const AppStyled = styled.div`
   display: grid;
   grid-template-rows: 60px auto;
   height: 100vh;
-  position: relative;
+  padding-bottom: 30px;
 `
 
 const MainStyled = styled.main`
   overflow-y: scroll;
-  position: relative;
 `

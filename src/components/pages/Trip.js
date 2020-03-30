@@ -11,8 +11,8 @@ import NoteList from '../trip/NoteList'
 import { useHistory, Link } from 'react-router-dom'
 
 Trip.propTypes = {
-  trips: PropTypes.array,
-  deleteTrip: PropTypes.func,
+  trips: PropTypes.array.isRequired,
+  deleteTrip: PropTypes.func.isRequired,
 }
 
 export default function Trip({ trips, deleteTrip }) {

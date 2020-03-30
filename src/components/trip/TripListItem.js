@@ -4,27 +4,37 @@ import defaultImg from '../../images/default-image.jpg'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons'
+import { Link } from 'react-router-dom'
+import Bookmark from './Bookmark'
 
 TripListItem.propTypes = {
-  trip: PropTypes.object,
+  trip: PropTypes.object.isRequired,
+  onBookmarkClick: PropTypes.func.isRequired,
 }
 
-export default function TripListItem({ trip }) {
+export default function TripListItem({ trip, onBookmarkClick }) {
   return (
-    <>
-      <TripListItemStyled>
-        <img src={defaultImg} width="200" alt=""></img>
-        <WrapperStyled>
-          <h2>{trip.title}</h2>
-          <div>
-            <FontAwesomeIcon className="icon" icon={faCalendarAlt} />
-            <span>{trip.date}</span>
-          </div>
-        </WrapperStyled>
-      </TripListItemStyled>
-    </>
+    <Wrapper>
+      <Bookmark trip={trip} onBookmarkClick={onBookmarkClick} />
+      <Link to={`/trip/${trip.id}`} key={trip.id}>
+        <TripListItemStyled>
+          <img src={defaultImg} width="200" alt=""></img>
+          <WrapperStyled>
+            <h2>{trip.title}</h2>
+            <div>
+              <FontAwesomeIcon className="icon" icon={faCalendarAlt} />
+              <span>{trip.date}</span>
+            </div>
+          </WrapperStyled>
+        </TripListItemStyled>
+      </Link>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+  position: relative;
+`
 
 const TripListItemStyled = styled.section`
   border-radius: 10px;
@@ -37,7 +47,6 @@ const TripListItemStyled = styled.section`
   line-height: 1.29;
   color: #747474;
   height: 100px;
-  overflow: hidden;
 
   h2 {
     font-size: 18px;

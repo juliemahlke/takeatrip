@@ -2,43 +2,61 @@
   {
     "title": "Barcelona",
     "date": "12.05. - 20.05.20",
-    "id": "53353504"
+    "id": "53353504",
+    "isBookmarked": false
   },
   {
     "title": "Berlin Messe ITB",
     "date": "07.03. - 10.03.20",
-    "id": "11600010"
+    "id": "11600010",
+    "isBookmarked": false
   },
   {
     "title": "Roadtrip New York - Miami",
     "date": "19.07. - 06.08.20",
-    "id": "94732780"
+    "id": "94732780",
+    "isBookmarked": false
   },
   {
     "title": "Mallorca mit Vivien, Saskia & Sarah",
     "date": "12.05. - 20.05.20",
-    "id": "90234563"
+    "id": "90234563",
+    "isBookmarked": false
   },
   {
     "title": "Osterurlaub Kanaren",
     "date": "12.05. - 20.05.20",
-    "id": "62262665"
+    "id": "62262665",
+    "isBookmarked": false
   },
   {
     "title": "Griechenland - Kreta",
     "date": "23.11. - 28.11.19",
-    "id": "65850887"
+    "id": "65850887",
+    "isBookmarked": false
   },
   {
     "title": "Gran Canaria, Kanaren/Spanien",
     "date": "12.05. - 20.05.20",
-    "id": "05712139"
+    "id": "05712139",
+    "isBookmarked": false
   },
   {
     "title": "Amsterdam Wochenendtrip",
     "date": "Herbst 2019",
-    "id": "66800662"
+    "id": "66800662",
+    "isBookmarked": false
   },
-  { "title": "Basel", "date": "März 2019 - Fasnacht", "id": "11389253" },
-  { "title": "Thailand - Koh Samui", "date": "Juli / 2017", "id": "98798867" }
+  {
+    "title": "Basel",
+    "date": "März 2019 - Fasnacht",
+    "id": "11389253",
+    "isBookmarked": false
+  },
+  {
+    "title": "Thailand - Koh Samui",
+    "date": "Juli / 2017",
+    "id": "98798867",
+    "isBookmarked": false
+  }
 ]
